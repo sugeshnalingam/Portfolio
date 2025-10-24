@@ -3,45 +3,173 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sugeshna Santhalingam — Portfolio</title>
+  <title>Sugeshna | Data Analyst Portfolio</title>
+  <meta name="description" content="Sugeshna Santhalingam — data analyst & information systems portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <header class="site-header">
-    <h1>Sugeshna Santhalingam</h1>
-    <p class="subtitle">Data Analyst • Information Systems Graduate</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- ====== NAV ====== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Sugeshna</a>
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>I’m a recent MBA graduate in Information Systems, passionate about data analytics, business intelligence, and automation. I enjoy solving problems through data-driven insights.</p>
-    </section>
+  <!-- ====== HERO ====== -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Data Analyst & Information Systems</h1>
+        <p>I turn messy data into clean dashboards and decisions. SQL · Python · Power BI · ETL.</p>
+        <div class="cta">
+          <a class="btn primary" href="Sugeshna_Santhalingam_Resume.pdf" download>Download Resume</a>
+          <a class="btn" href="#projects">View Projects</a>
+        </div>
+        <div class="social">
+          <a href="mailto:sugeshnalingam@gmail.com" aria-label="Email">Email</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/sugeshnalingam" target="_blank" rel="noopener">LinkedIn</a>
+          <span>·</span>
+          <a href="https://github.com/sugeshnalingam" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat">
+          <span class="big">10+</span>
+          <span class="label">Dashboards</span>
+        </div>
+        <div class="stat">
+          <span class="big">SQL</span>
+          <span class="label">MySQL · MS SQL</span>
+        </div>
+        <div class="stat">
+          <span class="big">ETL</span>
+          <span class="label">Python Pipelines</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
+  <!-- ====== PROJECTS ====== -->
+  <section id="projects" class="section">
+    <div class="container">
       <h2>Projects</h2>
-      <article class="project">
-        <h3>Sample Project</h3>
-        <p>This section will soon feature my machine learning and AI projects.</p>
-      </article>
-    </section>
+      <p class="muted">A few recent things I built. More coming soon.</p>
 
-    <section id="contact">
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="card-body">
+            <h3>ETL & KPI Dashboard</h3>
+            <p>Python + SQL pipeline that ingests CSV logs into a relational schema and powers a Power BI dashboard tracking uptime, tickets & SLAs.</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Power BI</li></ul>
+            <div class="links">
+              <a href="#" class="link">Live demo</a>
+              <a href="#" class="link">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="card-body">
+            <h3>Churn Prediction (ML)</h3>
+            <p>Cleaned and modeled customer data (LogReg & RandomForest). Achieved 84% accuracy; exported insights as an executive summary.</p>
+            <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li></ul>
+            <div class="links">
+              <a href="#" class="link">Case study</a>
+              <a href="#" class="link">Notebook</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div class="card-body">
+            <h3>Interactive Sales Viz</h3>
+            <p>Bar/line charts with Chart.js to visualize monthly sales and YoY growth. Lightweight, mobile-friendly.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Chart.js</li></ul>
+            <div class="links">
+              <a href="#" class="link">Live demo</a>
+              <a href="#" class="link">Code</a>
+            </div>
+          </div>
+          <canvas id="salesChart" height="180" aria-label="Sales chart"></canvas>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span>SQL</span><span>Python</span><span>Power BI</span><span>Tableau</span>
+        <span>ETL</span><span>Data Modeling</span><span>Excel</span><span>Git</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE / EDUCATION ====== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience & Education</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="dot"></div>
+          <div>
+            <h3>Data Analyst Intern — Tri-bee</h3>
+            <p class="muted">2024</p>
+            <p>Automated reporting and built interactive dashboards; streamlined ETL to improve data accuracy and speed.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="dot"></div>
+          <div>
+            <h3>MBA — Information Systems</h3>
+            <p class="muted">Graduated 2025</p>
+            <p>Focused on analytics, process optimization, and BI tooling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT (Netlify form) ====== -->
+  <section id="contact" class="section alt">
+    <div class="container">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:sugeshnalingam@gmail.com">sugeshnalingam@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/sugeshnalingam" target="_blank">linkedin.com/in/sugeshnalingam</a></p>
-    </section>
-  </main>
+      <p class="muted">Want to collaborate or chat? Send a note — I’ll reply quickly.</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <input name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <p>© 2025 Sugeshna Santhalingam</p>
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Sugeshna Santhalingam • Hosted on Netlify</p>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
