@@ -4,76 +4,99 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sugeshna | Data Analyst Portfolio</title>
-  <meta name="description" content="Sugeshna Santhalingam — data analyst & information systems portfolio" />
+  <meta name="description" content="Sugeshna Santhalingam — Data Analyst & Information Systems Graduate Portfolio" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <!-- ====== NAV ====== -->
-  <header class="nav">
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="top">
     <div class="container nav-inner">
       <a href="#top" class="brand">Sugeshna</a>
-      <button class="nav-toggle" aria-label="Open menu">☰</button>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn small" aria-label="Toggle theme">☾</button>
+        <button id="menuToggle" class="btn small hide-desktop" aria-label="Open menu">☰</button>
+      </div>
     </div>
   </header>
 
-  <!-- ====== HERO ====== -->
-  <section id="top" class="hero">
+  <!-- ===== HERO ===== -->
+  <section class="hero" data-aos="fade-up">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <h1>Data Analyst | Early Career</h1>
-        <p>I turn messy data into clean dashboards and decisions. SQL · Python · Power BI · ETL.</p>
+        <h1>Data Analyst & Information Systems Graduate</h1>
+        <p class="tagline">
+          I uncover patterns and transform data into strategy. Passionate about data storytelling, automation, and bridging analytics with business growth.
+        </p>
+
         <div class="cta">
-          <a class="btn primary" href="SUGESHNA DA.pdf" download>Download Resume</a>
+          <a class="btn primary" href="Sugeshna_DA.pdf" download>Download Resume</a>
           <a class="btn" href="#projects">View Projects</a>
         </div>
+
         <div class="social">
-          <a href="mailto:sugeshnalingam@gmail.com" aria-label="Email">Email</a>
+          <a href="mailto:sugeshnalingam@gmail.com">Email</a>
           <span>·</span>
           <a href="https://www.linkedin.com/in/sugeshnalingam" target="_blank" rel="noopener">LinkedIn</a>
           <span>·</span>
           <a href="https://github.com/sugeshnalingam" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="stat">
-          <span class="big">10+</span>
-          <span class="label">Dashboards</span>
-        </div>
-        <div class="stat">
-          <span class="big">SQL</span>
-          <span class="label">MySQL · MS SQL</span>
-        </div>
-        <div class="stat">
-          <span class="big">ETL</span>
-          <span class="label">Python Pipelines</span>
-        </div>
+
+      <!-- Lottie Animation -->
+      <div class="hero-anim" aria-hidden="true" data-aos="zoom-in">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player
+          src="https://assets6.lottiefiles.com/packages/lf20_49rdyysj.json"
+          background="transparent" speed="1" loop autoplay>
+        </lottie-player>
       </div>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section alt" data-aos="fade-up">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m <strong>Sugeshna Santhalingam</strong> — a recent MBA graduate specializing in Information Systems and passionate about data analytics. 
+        I love uncovering insights hidden in raw data and transforming them into visual stories that drive smarter business decisions. 
+        My interests lie at the intersection of <em>data, technology, and strategy</em> — and I’m continuously learning new ways to apply analytics for real-world impact.
+      </p>
     </div>
   </section>
 
-  <!-- ====== PROJECTS ====== -->
-  <section id="projects" class="section">
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section" data-aos="fade-up">
     <div class="container">
       <h2>Projects</h2>
       <p class="muted">A few recent things I built. More coming soon.</p>
 
       <div class="grid">
-        <!-- Project 1 -->
-        <article class="card">
+        <article class="card" data-aos="zoom-in">
           <div class="card-body">
             <h3>ETL & KPI Dashboard</h3>
-            <p>Python + SQL pipeline that ingests CSV logs into a relational schema and powers a Power BI dashboard tracking uptime, tickets & SLAs.</p>
-            <ul class="tags"><li>Python</li><li>SQL</li><li>Power BI</li></ul>
+            <p>
+              Built an automated data pipeline using Python and SQL to extract and clean operational data, feeding a Power BI dashboard that tracks performance KPIs and identifies efficiency gaps.
+            </p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Power BI</li><li>ETL</li></ul>
             <div class="links">
               <a href="#" class="link">Live demo</a>
               <a href="#" class="link">Code</a>
@@ -81,12 +104,13 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
-        <article class="card">
+        <article class="card" data-aos="zoom-in" data-aos-delay="75">
           <div class="card-body">
-            <h3>Churn Prediction (ML)</h3>
-            <p>Cleaned and modeled customer data (LogReg & RandomForest). Achieved 84% accuracy; exported insights as an executive summary.</p>
-            <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li></ul>
+            <h3>Customer Churn Prediction (ML)</h3>
+            <p>
+              Developed a machine-learning model using Logistic Regression and Random Forest to predict churn from customer behavior data, achieving 84% accuracy and actionable retention insights.
+            </p>
+            <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>Data Visualization</li></ul>
             <div class="links">
               <a href="#" class="link">Case study</a>
               <a href="#" class="link">Notebook</a>
@@ -94,25 +118,26 @@
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="card">
+        <article class="card" data-aos="zoom-in" data-aos-delay="150">
           <div class="card-body">
-            <h3>Interactive Sales Viz</h3>
-            <p>Bar/line charts with Chart.js to visualize monthly sales and YoY growth. Lightweight, mobile-friendly.</p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>Chart.js</li></ul>
+            <h3>Interactive Sales Visualization</h3>
+            <p>
+              Designed a responsive dashboard with Chart.js to visualize real-time sales and revenue growth, enabling executives to monitor performance trends across regions.
+            </p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Chart.js</li></ul>
             <div class="links">
               <a href="#" class="link">Live demo</a>
               <a href="#" class="link">Code</a>
             </div>
           </div>
-          <canvas id="salesChart" height="180" aria-label="Sales chart"></canvas>
+          <canvas id="salesChart" height="160" aria-label="Sales chart"></canvas>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section alt">
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section alt" data-aos="fade-up">
     <div class="container">
       <h2>Skills</h2>
       <div class="chips">
@@ -122,8 +147,8 @@
     </div>
   </section>
 
-  <!-- ====== EXPERIENCE / EDUCATION ====== -->
-  <section id="experience" class="section">
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section" data-aos="fade-up">
     <div class="container">
       <h2>Experience & Education</h2>
       <div class="timeline">
@@ -147,11 +172,12 @@
     </div>
   </section>
 
-  <!-- ====== CONTACT (Netlify form) ====== -->
-  <section id="contact" class="section alt">
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section alt" data-aos="fade-up">
     <div class="container">
       <h2>Contact</h2>
       <p class="muted">Want to collaborate or chat? Send a note — I’ll reply quickly.</p>
+
       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Don’t fill this out: <input name="bot-field"></label></p>
@@ -169,8 +195,11 @@
     </div>
   </footer>
 
+  <div id="cursor"></div>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
