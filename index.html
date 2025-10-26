@@ -11,9 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.ico">
 
@@ -26,161 +23,61 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero-glow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      position: absolute; inset: 0;
       background: radial-gradient(circle at 70% 40%, rgba(139,125,255,0.25), transparent 60%),
                   radial-gradient(circle at 20% 70%, rgba(79,195,255,0.2), transparent 70%);
-      pointer-events: none;
-      z-index: 0;
+      pointer-events: none; z-index: 0;
     }
-
     .hero-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 40px; flex-wrap: wrap; position: relative; z-index: 1;
     }
 
-    /* ===== Hero name glow + vivid moving reflection ===== */
+    /* ===== Neon Name ===== */
     .hero-name {
-      font-size: 54px;
-      font-weight: 800;
+      font-size: 54px; font-weight: 800;
       background: linear-gradient(90deg, #8b7dff, #4fc3ff, #9b8bff, #4fc3ff);
       background-size: 250%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       animation: glowShift 4s linear infinite, glowPulse 3s ease-in-out infinite alternate;
       text-shadow: 0 0 45px rgba(139,125,255,0.7), 0 0 90px rgba(79,195,255,0.5);
     }
-
-    @keyframes glowShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
+    @keyframes glowShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
     @keyframes glowPulse {
-      from {
-        text-shadow:
-          0 0 25px rgba(139,125,255,0.6),
-          0 0 60px rgba(79,195,255,0.3);
-      }
-      to {
-        text-shadow:
-          0 0 70px rgba(139,125,255,0.9),
-          0 0 150px rgba(79,195,255,0.6);
-      }
+      from { text-shadow: 0 0 25px rgba(139,125,255,.6), 0 0 60px rgba(79,195,255,.3); }
+      to   { text-shadow: 0 0 70px rgba(139,125,255,.9), 0 0 150px rgba(79,195,255,.6); }
     }
+    .hero-sub { font-weight:500; font-size:20px; color:#b3c6ff; margin-top:4px; }
 
-    .hero-sub {
-      font-weight: 500;
-      font-size: 20px;
-      color: #b3c6ff;
-      margin-top: 4px;
-    }
+    /* ===== Buttons ===== */
+    .btn { padding:12px 24px; border-radius:8px; border:none; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block; transition:.3s; position:relative; z-index:1; }
+    .btn.primary { background:linear-gradient(90deg,#7d5fff,#4fc3ff); color:#fff; box-shadow:0 0 20px rgba(125,95,255,.6); }
+    .btn.primary:hover { background:linear-gradient(90deg,#9c8bff,#5fd4ff); box-shadow:0 0 40px rgba(125,95,255,.9); transform:translateY(-3px); }
+    .btn:not(.primary){ background:transparent; color:#8bbdff; border:1px solid rgba(143,150,255,.6); }
+    .btn:not(.primary):hover{ background:rgba(143,150,255,.1); box-shadow:0 0 25px rgba(143,150,255,.4); transform:translateY(-2px); }
 
-    /* ===== Glowing Buttons ===== */
-    .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
+    /* ===== Social Links ===== */
+    .social { margin-top:18px; }
+    .social a { color:#b5c8ff; text-decoration:none; font-weight:500; transition:.3s; }
+    .social a:hover { color:#fff; text-shadow:0 0 12px rgba(139,125,255,.9), 0 0 20px rgba(79,195,255,.8); }
+    .social span { color:#6f7ea8; margin:0 6px; }
 
-    .btn.primary {
-      background: linear-gradient(90deg, #7d5fff, #4fc3ff);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(125,95,255,0.6);
-    }
-
-    .btn.primary:hover {
-      background: linear-gradient(90deg, #9c8bff, #5fd4ff);
-      box-shadow: 0 0 40px rgba(125,95,255,0.9);
-      transform: translateY(-3px);
-    }
-
-    .btn:not(.primary) {
-      background: transparent;
-      color: #8bbdff;
-      border: 1px solid rgba(143, 150, 255, 0.6);
-    }
-
-    .btn:not(.primary):hover {
-      background: rgba(143, 150, 255, 0.1);
-      box-shadow: 0 0 25px rgba(143,150,255,0.4);
-      transform: translateY(-2px);
-    }
-
-    /* ===== Social Links Neon Hover ===== */
-    .social {
-      margin-top: 18px;
-    }
-
-    .social a {
-      color: #b5c8ff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .social a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 12px rgba(139,125,255,0.9), 0 0 20px rgba(79,195,255,0.8);
-    }
-
-    .social span {
-      color: #6f7ea8;
-      margin: 0 6px;
-    }
-
-    /* ===== Scroll to Top Button ===== */
+    /* ===== Scroll-to-top ===== */
     #scrollTopBtn {
-      position: fixed;
-      bottom: 35px;
-      right: 35px;
-      background: linear-gradient(135deg, #7d5fff, #4fc3ff);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 0 25px rgba(125,95,255,0.6);
-      display: none;
-      z-index: 1000;
-      transition: all 0.3s ease;
+      position:fixed; bottom:35px; right:35px;
+      background:linear-gradient(135deg,#7d5fff,#4fc3ff); color:#fff;
+      border:none; border-radius:50%; width:50px; height:50px; font-size:24px; cursor:pointer;
+      box-shadow:0 0 25px rgba(125,95,255,.6); display:none; z-index:1000; transition:.3s;
     }
-
-    #scrollTopBtn:hover {
-      box-shadow: 0 0 45px rgba(125,95,255,1);
-      transform: translateY(-4px) rotate(12deg) scale(1.1);
-      animation: pulse 1.2s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { filter: brightness(1); }
-      50% { filter: brightness(1.5); }
-    }
+    #scrollTopBtn:hover { box-shadow:0 0 45px rgba(125,95,255,1); transform:translateY(-4px) rotate(12deg) scale(1.1); animation:pulse 1.2s infinite ease-in-out; }
+    @keyframes pulse { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.5)} }
   </style>
 </head>
 
 <body>
-  <header class="nav" id="top" data-aos="fade-down">
+  <!-- NAV -->
+  <header class="nav" id="top">
     <div class="container nav-inner">
       <a href="#top" class="brand">Sugeshna</a>
       <nav class="nav-links">
@@ -195,21 +92,22 @@
     </div>
   </header>
 
-  <section class="hero" data-aos="fade-up">
+  <!-- HERO -->
+  <section class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy" data-aos="fade-right">
+      <div class="hero-copy">
         <h1 class="hero-name">Sugeshna Santhalingam</h1>
         <h3 class="hero-sub">MBA Graduate • Data Analyst</h3>
         <p class="tagline">
           I uncover patterns and transform data into strategy. Passionate about data storytelling, automation, and bridging analytics with business growth.
         </p>
 
-        <div class="cta" data-aos="fade-up" data-aos-delay="200">
+        <div class="cta">
           <a class="btn primary" href="Sugeshna_DA.pdf" download>Download Resume</a>
           <a class="btn" href="#projects">View Projects</a>
         </div>
 
-        <div class="social" data-aos="fade-up" data-aos-delay="400">
+        <div class="social">
           <a href="mailto:sugeshnalingam@gmail.com">Email</a>
           <span>·</span>
           <a href="https://www.linkedin.com/in/sugeshna-santhalingam" target="_blank">LinkedIn</a>
@@ -218,7 +116,8 @@
         </div>
       </div>
 
-      <div class="hero-anim" data-aos="zoom-in">
+      <!-- Female Lottie -->
+      <div class="hero-anim">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player
           src="https://lottie.host/8e8f030e-b734-4d8b-90e1-fda839f9bb9b/nHTKYI5jcx.json"
@@ -229,25 +128,27 @@
     <div class="hero-glow"></div>
   </section>
 
-  <section id="about" class="section alt" data-aos="fade-up">
+  <!-- ABOUT -->
+  <section id="about" class="section alt">
     <div class="container">
       <h2>About Me</h2>
       <p>
-        Hi, I’m <strong>Sugeshna Santhalingam</strong> — a recent MBA graduate specializing in Information Systems and passionate about data analytics. 
-        I love uncovering insights hidden in raw data and transforming them into visual stories that drive smarter business decisions. 
-        My interests lie at the intersection of <em>data, technology, and strategy</em> — and I’m continuously learning new ways to apply analytics for real-world impact.
+        Hi, I’m <strong>Sugeshna Santhalingam</strong> — an MBA graduate specializing in Information Systems and passionate about data analytics.
+        I uncover insights from raw data and turn them into visual stories that drive strategic growth and efficiency.
       </p>
     </div>
   </section>
 
-  <section id="projects" class="section" data-aos="fade-right">
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <div class="container">
       <h2>Projects</h2>
-      <p class="muted">A few recent things I built. More coming soon.</p>
+      <p>Here are some of my projects showcasing data visualization, automation, and analytics.</p>
     </div>
   </section>
 
-  <section id="skills" class="section alt" data-aos="fade-left">
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
     <div class="container">
       <h2>Skills</h2>
       <div class="chips">
@@ -257,55 +158,66 @@
     </div>
   </section>
 
-  <section id="experience" class="section" data-aos="fade-up">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
     <div class="container">
       <h2>Experience</h2>
+      <h3>Business Development Sales Representative — AT&T</h3>
+      <p><em>Aug 2025 – Present</em></p>
+      <ul>
+        <li>Conducted cold calls to potential clients, introducing business solutions and generating qualified leads.</li>
+        <li>Collaborated with cross-functional teams to achieve monthly sales targets and maintain client satisfaction.</li>
+      </ul>
+
+      <h3>Data Analyst Intern — Tri Bee</h3>
+      <ul>
+        <li>Analyzed customer behavior and generated dashboards for better decision-making.</li>
+        <li>Cleaned and visualized datasets using Python and Power BI to identify performance trends.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="education" class="section alt" data-aos="fade-right">
+  <!-- EDUCATION -->
+  <section id="education" class="section alt">
     <div class="container">
       <h2>Education</h2>
+      <ul>
+        <li><strong>MBA (Information Systems)</strong> — Graduated 2025</li>
+        <li><strong>BBA (Information Systems)</strong> — PSG College of Arts & Science</li>
+      </ul>
     </div>
   </section>
 
-  <section id="certifications" class="section" data-aos="fade-left">
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
     <div class="container">
       <h2>Certifications</h2>
+      <ul>
+        <li>Google Data Analytics Professional Certificate</li>
+        <li>Microsoft Power BI Certification</li>
+      </ul>
     </div>
   </section>
 
-  <section id="contact" class="section alt" data-aos="fade-up">
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
     <div class="container">
       <h2>Contact</h2>
+      <p>Let’s connect! Reach me at <a href="mailto:sugeshnalingam@gmail.com">sugeshnalingam@gmail.com</a></p>
     </div>
   </section>
 
+  <!-- Scroll-to-top -->
   <button id="scrollTopBtn" title="Back to Top">↑</button>
-
   <script>
-    // Scroll to Top
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    };
-    scrollTopBtn.onclick = function() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = (window.scrollY > 400) ? 'block' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-      once: true,
-      easing: 'ease-out',
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
