@@ -18,35 +18,172 @@
   <link rel="icon" href="favicon.ico">
 
   <style>
-    /* Hero name glow */
+    /* ===== Hero Background ===== */
+    .hero {
+      background: linear-gradient(180deg, #0b0c10 0%, #101422 40%, #161b2e 100%);
+      color: white;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 40%, rgba(139,125,255,0.25), transparent 60%),
+                  radial-gradient(circle at 20% 70%, rgba(79,195,255,0.2), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== Hero name glow + vivid moving reflection ===== */
     .hero-name {
-      font-size: 52px;
+      font-size: 54px;
       font-weight: 800;
-      background: linear-gradient(90deg, #8b7dff, #4fc3ff);
+      background: linear-gradient(90deg, #8b7dff, #4fc3ff, #9b8bff, #4fc3ff);
+      background-size: 250%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 25px rgba(139,125,255,0.45);
-      animation: glowPulse 3s ease-in-out infinite alternate;
+      animation: glowShift 4s linear infinite, glowPulse 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 45px rgba(139,125,255,0.7), 0 0 90px rgba(79,195,255,0.5);
     }
+
+    @keyframes glowShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     @keyframes glowPulse {
-      from { text-shadow: 0 0 20px rgba(139,125,255,0.4); }
-      to { text-shadow: 0 0 45px rgba(79,195,255,0.6); }
+      from {
+        text-shadow:
+          0 0 25px rgba(139,125,255,0.6),
+          0 0 60px rgba(79,195,255,0.3);
+      }
+      to {
+        text-shadow:
+          0 0 70px rgba(139,125,255,0.9),
+          0 0 150px rgba(79,195,255,0.6);
+      }
     }
+
     .hero-sub {
       font-weight: 500;
       font-size: 20px;
-      color: #9eb0cc;
+      color: #b3c6ff;
       margin-top: 4px;
+    }
+
+    /* ===== Glowing Buttons ===== */
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, #7d5fff, #4fc3ff);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(125,95,255,0.6);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(90deg, #9c8bff, #5fd4ff);
+      box-shadow: 0 0 40px rgba(125,95,255,0.9);
+      transform: translateY(-3px);
+    }
+
+    .btn:not(.primary) {
+      background: transparent;
+      color: #8bbdff;
+      border: 1px solid rgba(143, 150, 255, 0.6);
+    }
+
+    .btn:not(.primary):hover {
+      background: rgba(143, 150, 255, 0.1);
+      box-shadow: 0 0 25px rgba(143,150,255,0.4);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Social Links Neon Hover ===== */
+    .social {
+      margin-top: 18px;
+    }
+
+    .social a {
+      color: #b5c8ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(139,125,255,0.9), 0 0 20px rgba(79,195,255,0.8);
+    }
+
+    .social span {
+      color: #6f7ea8;
+      margin: 0 6px;
+    }
+
+    /* ===== Scroll to Top Button ===== */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 35px;
+      right: 35px;
+      background: linear-gradient(135deg, #7d5fff, #4fc3ff);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(125,95,255,0.6);
+      display: none;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      box-shadow: 0 0 45px rgba(125,95,255,1);
+      transform: translateY(-4px) rotate(12deg) scale(1.1);
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.5); }
     }
   </style>
 </head>
 
 <body>
-  <!-- ===== NAV ===== -->
-  <header class="nav" id="top">
+  <header class="nav" id="top" data-aos="fade-down">
     <div class="container nav-inner">
       <a href="#top" class="brand">Sugeshna</a>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -55,42 +192,36 @@
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="nav-actions">
-        <button id="themeToggle" class="btn small" aria-label="Toggle theme">☾</button>
-        <button id="menuToggle" class="btn small hide-desktop" aria-label="Open menu">☰</button>
-      </div>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
   <section class="hero" data-aos="fade-up">
     <div class="container hero-grid">
-      <div class="hero-copy">
+      <div class="hero-copy" data-aos="fade-right">
         <h1 class="hero-name">Sugeshna Santhalingam</h1>
         <h3 class="hero-sub">MBA Graduate • Data Analyst</h3>
         <p class="tagline">
           I uncover patterns and transform data into strategy. Passionate about data storytelling, automation, and bridging analytics with business growth.
         </p>
 
-        <div class="cta">
+        <div class="cta" data-aos="fade-up" data-aos-delay="200">
           <a class="btn primary" href="Sugeshna_DA.pdf" download>Download Resume</a>
           <a class="btn" href="#projects">View Projects</a>
         </div>
 
-        <div class="social">
+        <div class="social" data-aos="fade-up" data-aos-delay="400">
           <a href="mailto:sugeshnalingam@gmail.com">Email</a>
           <span>·</span>
-          <a href="https://www.linkedin.com/in/sugeshna-santhalingam" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/sugeshna-santhalingam" target="_blank">LinkedIn</a>
           <span>·</span>
-          <a href="https://github.com/sugeshnalingam" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/sugeshnalingam" target="_blank">GitHub</a>
         </div>
       </div>
 
-      <!-- Lottie Animation (Female Analyst) -->
-      <div class="hero-anim" aria-hidden="true" data-aos="zoom-in">
+      <div class="hero-anim" data-aos="zoom-in">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player
-          src="https://assets2.lottiefiles.com/packages/lf20_x1gjdldd.json"
+          src="https://lottie.host/8e8f030e-b734-4d8b-90e1-fda839f9bb9b/nHTKYI5jcx.json"
           background="transparent" speed="1" loop autoplay>
         </lottie-player>
       </div>
@@ -98,7 +229,6 @@
     <div class="hero-glow"></div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
   <section id="about" class="section alt" data-aos="fade-up">
     <div class="container">
       <h2>About Me</h2>
@@ -110,48 +240,14 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section" data-aos="fade-up">
+  <section id="projects" class="section" data-aos="fade-right">
     <div class="container">
       <h2>Projects</h2>
       <p class="muted">A few recent things I built. More coming soon.</p>
-
-      <div class="grid">
-        <article class="card" data-aos="zoom-in">
-          <div class="card-body">
-            <h3>ETL & KPI Dashboard</h3>
-            <p>
-              Built an automated data pipeline using Python and SQL to extract and clean operational data, feeding a Power BI dashboard that tracks performance KPIs and identifies efficiency gaps.
-            </p>
-            <ul class="tags"><li>Python</li><li>SQL</li><li>Power BI</li><li>ETL</li></ul>
-          </div>
-        </article>
-
-        <article class="card" data-aos="zoom-in" data-aos-delay="75">
-          <div class="card-body">
-            <h3>Customer Churn Prediction (ML)</h3>
-            <p>
-              Developed a machine-learning model using Logistic Regression and Random Forest to predict churn from customer behavior data, achieving 84% accuracy and actionable retention insights.
-            </p>
-            <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>Data Visualization</li></ul>
-          </div>
-        </article>
-
-        <article class="card" data-aos="zoom-in" data-aos-delay="150">
-          <div class="card-body">
-            <h3>Interactive Sales Visualization</h3>
-            <p>
-              Designed a responsive dashboard with Chart.js to visualize real-time sales and revenue growth, enabling executives to monitor performance trends across regions.
-            </p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Chart.js</li></ul>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section alt" data-aos="fade-up">
+  <section id="skills" class="section alt" data-aos="fade-left">
     <div class="container">
       <h2>Skills</h2>
       <div class="chips">
@@ -161,105 +257,55 @@
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="section" data-aos="fade-up">
     <div class="container">
       <h2>Experience</h2>
-
-      <div class="timeline">
-        <div class="item">
-          <div class="dot"></div>
-          <div>
-            <h3>Data Analyst Intern — Coral Consultants</h3>
-            <p class="muted">2025</p>
-            <ul>
-              <li>Collaborated with consultants to collect and analyze client datasets to improve operational efficiency.</li>
-              <li>Created Power BI dashboards and visualizations that showcased business performance metrics.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="dot"></div>
-          <div>
-            <h3>Data Analyst Intern — Tri-bee</h3>
-            <p class="muted">2024</p>
-            <ul>
-              <li>Automated ETL processes to streamline reporting and data cleansing workflows.</li>
-              <li>Designed interactive dashboards to track KPI trends and improve business insights.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ===== EDUCATION ===== -->
-  <section id="education" class="section alt" data-aos="fade-up">
+  <section id="education" class="section alt" data-aos="fade-right">
     <div class="container">
       <h2>Education</h2>
-      <div class="timeline">
-        <div class="item">
-          <div class="dot"></div>
-          <div>
-            <h3>MBA — Information Systems</h3>
-            <p class="muted">Graduated 2025</p>
-            <p>Focused on data analytics, process optimization, and business intelligence tools.</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="dot"></div>
-          <div>
-            <h3>BBA — Information Systems, PSG College of Arts and Science</h3>
-            <p class="muted">Graduated 2023</p>
-            <p>Built foundational skills in business management, IT systems, and data-driven decision-making.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ===== CERTIFICATIONS ===== -->
-  <section id="certifications" class="section" data-aos="fade-up">
+  <section id="certifications" class="section" data-aos="fade-left">
     <div class="container">
       <h2>Certifications</h2>
-      <ul>
-        <li>Google Data Analytics Professional Certificate</li>
-        <li>Microsoft Power BI Fundamentals</li>
-        <li>SQL for Data Analysts — Coursera</li>
-      </ul>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
   <section id="contact" class="section alt" data-aos="fade-up">
     <div class="container">
       <h2>Contact</h2>
-      <p class="muted">Want to collaborate or chat? Send a note — I’ll reply quickly.</p>
-
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden"><label>Don’t fill this out: <input name="bot-field"></label></p>
-        <input name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-        <button class="btn primary" type="submit">Send message</button>
-      </form>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Sugeshna Santhalingam • Hosted on Netlify</p>
-    </div>
-  </footer>
+  <button id="scrollTopBtn" title="Back to Top">↑</button>
 
-  <div id="cursor"></div>
+  <script>
+    // Scroll to Top
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+      easing: 'ease-out',
+    });
+  </script>
 </body>
 </html>
