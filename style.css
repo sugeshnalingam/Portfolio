@@ -57,7 +57,6 @@ body {
   justify-content: center;
 }
 
-/* Center text block like the reference */
 .hero-text {
   text-align: center;
   position: relative;
@@ -71,7 +70,7 @@ body {
   margin: 0 0 10px;
   color: #b3b3b3;                   /* grey text */
   opacity: 0;
-  animation: subtitleIn 1s ease forwards 0.1s;
+  animation: subtitleIn 1s ease forwards 0.1s;   /* comes in once, then stays */
 }
 
 /* "PORTFOLIO" */
@@ -83,38 +82,42 @@ body {
   color: #7a001f;                    /* wine red */
   text-transform: uppercase;
   opacity: 0;
-  animation: titleIn 1.2s ease forwards 0.25s;
+  animation: titleIn 1.2s ease forwards 0.25s;  /* comes in once, then stays */
   transition: letter-spacing 0.3s ease, transform 0.3s ease;
 }
 
-/* little effect on hover */
 .title:hover {
   letter-spacing: 0.18em;
   transform: scale(1.02);
 }
 
-/* ===== Image: overlapping + cropped to waist ===== */
+/* ===== Image: overlapping, but not killing the text ===== */
 
 .hero-img-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);  /* push image slightly up */
-  width: 330px;                      /* control width */
-  height: 430px;                     /* crop height – shows head to waist */
-  overflow: hidden;                  /* hides legs, so it's "cropped" */
-  z-index: 2;                        /* above the text */
-  pointer-events: none;              /* mouse passes through */
+
+  /* move the image a bit to the right so "PORTFOLIO" is still readable */
+  top: 52%;
+  left: 60%;
+
+  transform: translate(-50%, -45%);
+
+  /* smaller width so more text is visible, and height tuned to keep head + hands */
+  width: 280px;
+  height: 440px;                     /* shows head down to just below hands */
+  overflow: hidden;                  /* crops legs and extra top area */
+  z-index: 2;                        /* image in front, text behind */
+  pointer-events: none;
   opacity: 0;
   animation: imageIn 1.2s ease forwards 0.45s;
 }
 
 .hero-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   filter: grayscale(100%);
   object-fit: cover;
-  object-position: center top;       /* focus on your upper body */
+  object-position: center 10%;       /* crop at head on top, keep hands at bottom */
 }
 
 /* ===== Animations ===== */
@@ -140,6 +143,7 @@ body {
     transform: translateY(-6px) scale(1.03);
   }
   100% {
+    opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
@@ -147,10 +151,10 @@ body {
 @keyframes imageIn {
   0% {
     opacity: 0;
-    transform: translate(-50%, -20%) scale(0.9);
+    transform: translate(-50%, -25%) scale(0.9);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -40%) scale(1);
+    transform: translate(-50%, -45%) scale(1);
   }
 }
