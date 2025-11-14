@@ -12,56 +12,60 @@ body {
   overflow-x: hidden;
 }
 
-/* Top Name (top-left or top-right, your choice) */
+/* Name at top-right */
 .top-name {
   position: absolute;
-  top: 20px;
-  left: 20px;           /* change to right: 20px if you want it on right */
-  font-size: 18px;
+  top: 30px;
+  right: 40px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 2px;
+  color: #000;
 }
 
-/* Text Section */
-.hero-text {
-  position: absolute;
-  top: 120px;
-  left: 40px;
+/* Wrapper for text & image */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 80px 0 0 80px;
 }
 
+/* Left text block */
 .hero-text h2 {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 400;
-  margin: 0 0 10px;
+  margin: 0 0 15px;
+  color: #000;
 }
 
-/* Big PORTFOLIO – deep blue like your reference */
 .hero-text h1 {
-  font-size: 96px;
+  font-size: 160px; 
   font-weight: 800;
-  line-height: 85px;
-  letter-spacing: 3px;
-  color: #2043a0;   /* deep blue */
+  line-height: 130px;
+  letter-spacing: 4px;
+  color: #2043a0;
   margin: 0;
 }
 
-/* Fade Animation */
+/* Your image — LARGE and slightly behind the text */
+.hero-img {
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  width: 550px; /* bigger */
+  z-index: -1; /* sends behind text */
+  filter: grayscale(100%);
+  opacity: 1;
+}
+
+/* Fade animation */
 .fade-in {
   opacity: 0;
-  animation: fade 1.8s ease forwards;
+  animation: fade 1.4s ease forwards;
 }
 
 @keyframes fade {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Your Image – smaller and on the bottom like the inspo */
-.hero-img {
-  position: absolute;
-  bottom: 0;
-  right: 40px;
-  width: 320px;               /* adjust smaller/bigger here */
-  filter: grayscale(100%);
-  animation: fade 2s ease forwards;
 }
