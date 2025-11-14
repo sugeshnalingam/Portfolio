@@ -1,109 +1,67 @@
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background: #ffffff;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
-/* Top Right Name */
+/* Top Name (top-left or top-right, your choice) */
 .top-name {
   position: absolute;
   top: 20px;
-  right: 40px;
-  font-size: 22px;
-  font-weight: 700;
+  left: 20px;           /* change to right: 20px if you want it on right */
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Text Section */
+.hero-text {
+  position: absolute;
+  top: 120px;
+  left: 40px;
+}
+
+.hero-text h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+/* Big PORTFOLIO – deep blue like your reference */
+.hero-text h1 {
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 85px;
   letter-spacing: 3px;
-  animation: fadeInDown 1s ease-out forwards;
+  color: #2043a0;   /* deep blue */
+  margin: 0;
 }
 
-/* Hero Section */
-.hero {
-  padding: 110px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
+/* Fade Animation */
+.fade-in {
+  opacity: 0;
+  animation: fade 1.8s ease forwards;
 }
 
-/* Text block */
-.welcome-text {
-  z-index: 2;
-  animation: slideInLeft 1s ease-out forwards;
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.welcome-text h2 {
-  font-size: 40px;
-  font-weight: 300;
-}
-
-.welcome-text h1 {
-  font-size: 140px;
-  font-weight: 900;
-  color: #1e3a8a; /* deep blue */
-  line-height: 0.9;
-  margin-top: -10px;
-  letter-spacing: 4px;
-}
-
-/* Image placement */
+/* Your Image – smaller and on the bottom like the inspo */
 .hero-img {
-  width: 470px;
   position: absolute;
   bottom: 0;
-  right: 110px;
-  z-index: 1;
-  animation: floatIn 1.2s ease-out forwards, gentleFloat 6s ease-in-out infinite;
-}
-
-/* --------- ANIMATIONS ---------- */
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes gentleFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  right: 40px;
+  width: 320px;               /* adjust smaller/bigger here */
+  filter: grayscale(100%);
+  animation: fade 2s ease forwards;
 }
