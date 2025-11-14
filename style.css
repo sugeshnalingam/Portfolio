@@ -1,5 +1,4 @@
-/* TEST VERSION WITH PINK BACKGROUND */
-/* If the background turns pink, CSS is working */
+/* FINAL HERO PAGE – black bg, wine red text, overlapping image */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
@@ -10,65 +9,148 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffe4ec; /* SUPER OBVIOUS PINK */
+  background-color: #000000;        /* black background */
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  color: #ffffff;
 }
 
-/* Name at top-right */
+/* ===== Top name ===== */
+
 .top-name {
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  top: 24px;
   right: 40px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 2px;
-  color: #000;
+  letter-spacing: 3px;
+  color: #f0f0f0;
+  z-index: 10;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Wrapper for text & image */
-.hero-container {
-  position: relative;
+.top-name:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px #ff4b8b;    /* glow on hover */
+  transform: translateY(-2px);
+}
+
+/* ===== Hero layout ===== */
+
+.hero {
   width: 100%;
   height: 100vh;
-  padding: 80px 0 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Left text block */
-.hero-text h2 {
-  font-size: 32px;
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center text block like the reference */
+.hero-text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* "welcome to my" */
+.subtitle {
+  font-size: 30px;
   font-weight: 400;
-  margin: 0 0 15px;
-  color: #000;
-}
-
-.hero-text h1 {
-  font-size: 160px;
-  font-weight: 800;
-  line-height: 130px;
-  letter-spacing: 4px;
-  color: #2043a0;
-  margin: 0;
-}
-
-/* Large image on right */
-.hero-img {
-  position: absolute;
-  bottom: 0;
-  right: 100px;
-  width: 550px;
-  z-index: -1;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-/* Fade animation */
-.fade-in {
+  margin: 0 0 10px;
+  color: #b3b3b3;                   /* grey text */
   opacity: 0;
-  animation: fade 1.4s ease forwards;
+  animation: subtitleIn 1s ease forwards 0.1s;
 }
 
-@keyframes fade {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* "PORTFOLIO" */
+.title {
+  margin: 0;
+  font-size: clamp(90px, 15vw, 170px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #7a001f;                    /* wine red */
+  text-transform: uppercase;
+  opacity: 0;
+  animation: titleIn 1.2s ease forwards 0.25s;
+  transition: letter-spacing 0.3s ease, transform 0.3s ease;
+}
+
+/* little effect on hover */
+.title:hover {
+  letter-spacing: 0.18em;
+  transform: scale(1.02);
+}
+
+/* ===== Image: overlapping + cropped to waist ===== */
+
+.hero-img-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);  /* push image slightly up */
+  width: 330px;                      /* control width */
+  height: 430px;                     /* crop height – shows head to waist */
+  overflow: hidden;                  /* hides legs, so it's "cropped" */
+  z-index: 2;                        /* above the text */
+  pointer-events: none;              /* mouse passes through */
+  opacity: 0;
+  animation: imageIn 1.2s ease forwards 0.45s;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  object-fit: cover;
+  object-position: center top;       /* focus on your upper body */
+}
+
+/* ===== Animations ===== */
+
+@keyframes subtitleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes imageIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
