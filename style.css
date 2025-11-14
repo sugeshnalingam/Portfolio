@@ -1,0 +1,59 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Top Right Name */
+.top-name {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Welcome text */
+.welcome-text {
+    text-align: left;
+    z-index: 2;
+}
+
+.welcome-text h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.welcome-text h1 {
+    font-size: 140px;
+    font-weight: 900;
+    color: #1e3a8a; /* Deep Blue like the reference */
+    line-height: 0.9;
+    margin-top: -20px;
+}
+
+/* Image placement */
+.hero-img {
+    width: 480px;
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+    z-index: 1;
+}
