@@ -1,3 +1,6 @@
+/* TEST VERSION WITH PINK BACKGROUND */
+/* If the background turns pink, CSS is working */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 * {
@@ -7,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #ffe4ec; /* SUPER OBVIOUS PINK */
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
@@ -40,7 +43,7 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 160px; 
+  font-size: 160px;
   font-weight: 800;
   line-height: 130px;
   letter-spacing: 4px;
@@ -48,13 +51,13 @@ body {
   margin: 0;
 }
 
-/* Your image — LARGE and slightly behind the text */
+/* Large image on right */
 .hero-img {
   position: absolute;
   bottom: 0;
   right: 100px;
-  width: 550px; /* bigger */
-  z-index: -1; /* sends behind text */
+  width: 550px;
+  z-index: -1;
   filter: grayscale(100%);
   opacity: 1;
 }
