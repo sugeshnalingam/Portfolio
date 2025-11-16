@@ -1,18 +1,17 @@
-// Simple Intersection Observer for slide-in animations
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.25,
-  }
-);
+// Intersection Observer for fade / slide animations
 
-document
-  .querySelectorAll(".slide-in-left, .slide-in-right, .slide-in-up")
-  .forEach((el) => observer.observe(el));
+const observerOptions = {
+  threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right").forEach((el) => {
+  observer.observe(el);
+});
