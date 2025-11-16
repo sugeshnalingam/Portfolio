@@ -2,161 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sugeshna | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sugeshna Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- ===== FIXED NAME TOP RIGHT ===== -->
-  <div class="top-name">
-    <span class="top-name-text">SUGESHNA SANTHALINGAM SUBBULAKSHMI</span>
-    <span class="top-name-underline"></span>
-  </div>
+  <!-- PAGE 1: HERO -->
+  <section class="hero" id="hero">
+    <div class="name-tag">SUGESHNA SANTHALINGAM SUBBULAKSHMI</div>
 
-  <!-- ===== PAGE 1: HERO ===== -->
-  <section id="hero" class="hero">
-    <div class="hero-inner">
-      <div class="hero-subtitle">welcome to my</div>
+    <div class="hero-subtitle">welcome to my</div>
 
-      <h1 class="hero-title">
-        PORTFOLIO
-      </h1>
+    <h1 class="hero-title">PORTFOLIO</h1>
 
-      <div class="hero-image-wrapper">
-        <img src="me.png" alt="Sugeshna" class="hero-image" />
-      </div>
-
-      <div class="hero-scroll">scroll</div>
+    <div class="hero-image">
+      <img src="me.png" alt="Sugeshna" />
     </div>
+
+    <div class="scroll-down">SCROLL</div>
   </section>
 
-  <!-- ===== PAGE 2: ABOUT ME ===== -->
-  <section id="about" class="section about-section">
-    <div class="about-left">
-      <h2 class="section-title glow-title">ABOUT ME</h2>
+  <!-- PAGE 2: ABOUT ME -->
+  <section class="about" id="about">
+    <h2 class="about-title">ABOUT ME</h2>
 
-      <p class="about-text">
-        Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.
-      </p>
-      <p class="about-text">
-        I blend data, creativity, and people skills – with real sales experience and a mind that loves patterns.
-      </p>
-      <p class="about-text">
-        I bring both logic + hustle wherever I go.
-      </p>
-      <p class="about-text">
-        Not perfect, not finished – but fully committed to building something bigger.
-      </p>
-    </div>
+    <div class="about-container">
+      <div class="about-text fade-in">
+        <p>Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.</p>
+        <p>I blend data, creativity, and people skills – with real sales experience and a mind that loves patterns.</p>
+        <p>I bring both logic + hustle wherever I go.</p>
+        <p>Not perfect, not finished – but fully committed to building something bigger.</p>
+      </div>
 
-    <div class="about-right">
-      <div class="analytics-orbit">
-        <div class="orbit halo"></div>
-        <div class="bars">
-          <div class="bar bar-1"></div>
-          <div class="bar bar-2"></div>
-          <div class="bar bar-3"></div>
-          <div class="bar bar-4"></div>
-        </div>
-        <svg class="analytics-line" viewBox="0 0 200 80" preserveAspectRatio="none">
-          <polyline points="0,70 40,40 90,55 150,25 200,35" />
-        </svg>
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="orb orb-4"></div>
+      <div class="about-animation fade-in">
+        <!-- This is your animated data-viz graphic; for now we just use the PNG you uploaded -->
+        <!-- Replace 'analytics.png' with your actual file name if different -->
+        <img src="analytics.png" alt="Data analytics animation" />
       </div>
     </div>
   </section>
 
-  <!-- ===== PAGE 3: MY IS JOURNEY (TIMELINE) ===== -->
-  <section id="journey" class="section journey-section">
-    <div class="journey-header">
-      <div class="journey-kicker">what I have done so far</div>
-      <h2 class="section-title glow-title">MY INFORMATION SYSTEMS JOURNEY</h2>
-    </div>
+  <!-- PAGE 3: JOURNEY -->
+  <section class="journey" id="journey">
+    <h2 class="journey-title">MY INFORMATION SYSTEMS JOURNEY</h2>
 
     <div class="timeline">
-      <!-- Timeline vertical line -->
       <div class="timeline-line"></div>
 
-      <!-- ITEM 1 - LEFT -->
-      <div class="timeline-item left">
-        <div class="timeline-card">
-          <h3 class="timeline-title">
-            Bachelors of Business Administration<br />
-            (Information Systems)
-          </h3>
-          <p class="timeline-school">PSG College of Arts and Science</p>
-          <p class="timeline-body">
-            Built a strong base in business, IT, and analytics – understanding how systems, data, and people come together to
-            drive decisions.
-          </p>
-          <p class="timeline-tagline">CGPA: <span>8.8 / 10</span></p>
-        </div>
-
+      <!-- ENTRY 1: BBA -->
+      <div class="timeline-entry left fade-in">
         <div class="timeline-icon">
-          <div class="timeline-icon-inner">
-            <img src="psg-logo.png" alt="PSG Logo" />
-          </div>
+          <img src="psg-logo.png" alt="PSG Logo" />
         </div>
+        <div class="timeline-date">SEPT 2020 – JULY 2023</div>
 
-        <div class="timeline-date-badge">
-          SEPT 2020 – JULY 2023
+        <h3 class="entry-header">
+          Bachelors of Business Administration (Information Systems)
+        </h3>
+        <div class="entry-sub">
+          PSG College of Arts and Science
+        </div>
+        <div class="entry-text">
+          <p>Built a strong base in business, IT, and analytics – understanding how systems, data, and people come together to drive decisions.</p>
+          <p>CGPA: 8.8 / 10</p>
         </div>
       </div>
 
-      <!-- ITEM 2 - RIGHT -->
-      <div class="timeline-item right">
-        <div class="timeline-card">
-          <h3 class="timeline-title">
-            Masters of Business Administration<br />
-            (Information Systems)
-          </h3>
-          <p class="timeline-school">The University of Toledo</p>
-          <p class="timeline-body">
-            Leveled up into advanced analytics, strategy, and real-world projects connecting data to business outcomes.
-          </p>
-          <p class="timeline-tagline">GPA: <span>3.4 / 4.0</span></p>
-        </div>
-
+      <!-- ENTRY 2: MBA -->
+      <div class="timeline-entry right fade-in">
         <div class="timeline-icon">
-          <div class="timeline-icon-inner">
-            <img src="utoledo-logo.png" alt="University of Toledo Logo" />
-          </div>
+          <img src="utoledo-logo.png" alt="University of Toledo Logo" />
         </div>
+        <div class="timeline-date">AUG 2023 – MAY 2025</div>
 
-        <div class="timeline-date-badge">
-          AUG 2023 – MAY 2025
+        <h3 class="entry-header">
+          Masters of Business Administration (Information Systems)
+        </h3>
+        <div class="entry-sub">
+          The University of Toledo
+        </div>
+        <div class="entry-text">
+          <p>Leveled up into advanced analytics, strategy, and real-world projects connecting data to business outcomes.</p>
+          <p>GPA: 3.4 / 4.0</p>
         </div>
       </div>
 
-      <!-- ITEM 3 - LEFT -->
-      <div class="timeline-item left">
-        <div class="timeline-card">
-          <h3 class="timeline-title">
-            Tri Bee — Data Analytics Intern
-          </h3>
-          <p class="timeline-school">Remote</p>
-          <p class="timeline-body">
-            Analyzed and prepared IT performance data using SQL and Python to uncover key operational trends.
-          </p>
-          <p class="timeline-body">
-            Designed interactive Power BI dashboards to present insights and guide strategic decision-making.
-          </p>
-        </div>
-
+      <!-- ENTRY 3: TRI BEE -->
+      <div class="timeline-entry left fade-in">
         <div class="timeline-icon">
-          <div class="timeline-icon-inner">
-            <img src="tribee-logo.png" alt="Tri Bee Logo" />
-          </div>
+          <img src="tribee-logo.png" alt="Tri Bee Logo" />
         </div>
+        <div class="timeline-date">JAN 2024 – JUNE 2024</div>
 
-        <div class="timeline-date-badge">
-          JAN 2024 – JUNE 2024
+        <h3 class="entry-header">
+          Tri Bee — Data Analytics Intern
+        </h3>
+        <div class="entry-sub">
+          Remote
+        </div>
+        <div class="entry-text">
+          <p>Analyzed and prepared IT performance data using SQL and Python to uncover key operational trends.</p>
+          <p>Designed interactive Power BI dashboards to present insights and guide strategic decision-making.</p>
         </div>
       </div>
     </div>
