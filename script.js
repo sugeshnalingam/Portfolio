@@ -1,4 +1,3 @@
-// Tiny intersection observer to fade sections / timeline entries in.
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-on-scroll");
 
@@ -16,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    {
-      threshold: 0.2,
-    }
+    { threshold: 0.2 }
   );
 
   faders.forEach(el => observer.observe(el));
