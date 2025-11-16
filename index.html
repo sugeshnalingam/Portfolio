@@ -7,14 +7,14 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Poppins:wght@300;400;600&family=Kalam:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Poppins:wght@300;400;600&family=Kalam:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ============ PAGE 1: YOUR ORIGINAL HERO ============ -->
+    <!-- ================== PAGE 1 – HERO ================== -->
     <div class="hero" id="top">
       <header class="top-bar">
         <span class="logo">
@@ -38,102 +38,142 @@
       </main>
     </div>
 
-    <!-- ============ PAGE 2: ABOUT ME ============ -->
-    <section class="about" id="about">
-      <h2 class="about-title">ABOUT ME</h2>
+    <!-- ================== PAGE 2 – ABOUT ME ================== -->
+    <section class="about-section" id="about">
+      <div class="about-inner fade-on-scroll">
+        <div class="about-text">
+          <h2 class="about-title">ABOUT ME</h2>
 
-      <div class="about-container">
-        <div class="about-text fade-in">
-          <p>Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.</p>
-          <p>
-            I blend data, creativity, and people skills – with real sales experience and a mind
-            that loves patterns.
-          </p>
-          <p>I bring both logic + hustle wherever I go.</p>
-          <p>Not perfect, not finished – but fully committed to building something bigger.</p>
+          <div class="about-copy">
+            <p>
+              Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.
+            </p>
+            <p>
+              I blend data, creativity, and people skills – with real sales experience and a mind that loves patterns.
+            </p>
+            <p>
+              I bring both logic + hustle wherever I go.
+            </p>
+            <p>
+              Not perfect, not finished – but fully committed to building something bigger.
+            </p>
+          </div>
         </div>
 
-        <div class="about-animation fade-in">
-          <div class="chart-halo">
-            <div class="bar bar1"></div>
-            <div class="bar bar2"></div>
-            <div class="bar bar3"></div>
-            <div class="bar bar4"></div>
-            <div class="chart-line"></div>
-            <div class="dot dot1"></div>
-            <div class="dot dot2"></div>
-            <div class="dot dot3"></div>
-            <div class="dot dot4"></div>
+        <div class="about-visual">
+          <div class="data-chart">
+            <div class="chart-glow"></div>
+            <div class="bars">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+            </div>
+            <svg class="chart-line" viewBox="0 0 200 100" preserveAspectRatio="none">
+              <polyline
+                points="0,80 50,60 100,70 150,40 200,45"
+                fill="none"
+                stroke="rgba(255,255,255,0.75)"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="chart-dots">
+              <span class="dot dot-1"></span>
+              <span class="dot dot-2"></span>
+              <span class="dot dot-3"></span>
+              <span class="dot dot-4"></span>
+              <span class="dot dot-5"></span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ PAGE 3: MY IS JOURNEY (UNCHANGED SPIRIT) ============ -->
-    <section class="journey" id="journey">
-      <h2 class="journey-title">MY INFORMATION SYSTEMS JOURNEY</h2>
+    <!-- ================== PAGE 3 – IS JOURNEY ================== -->
+    <section class="journey-section" id="journey">
+      <div class="journey-header fade-on-scroll">
+        <p class="journey-tagline">what I have done so far</p>
+        <h2 class="journey-title">
+          <span class="journey-soft">MY&nbsp;</span>
+          <span class="journey-strong">INFORMATION SYSTEMS</span>
+          <span class="journey-soft">&nbsp;JOURNEY</span>
+        </h2>
+      </div>
 
       <div class="timeline">
-        <div class="timeline-line"></div>
-
         <!-- BBA -->
-        <div class="timeline-entry left fade-in">
-          <div class="timeline-icon">
+        <div class="timeline-entry left fade-on-scroll">
+          <div class="timeline-card">
+            <h3 class="timeline-heading">
+              Bachelors of Business Administration<br />
+              <span class="sub">(Information Systems)</span>
+            </h3>
+            <p class="timeline-sub">PSG College of Arts and Science</p>
+            <p class="timeline-body">
+              Built a strong base in business, IT, and analytics – understanding how
+              systems, data, and people come together to drive decisions.
+            </p>
+            <p class="timeline-meta">CGPA: <strong>8.8 / 10</strong></p>
+          </div>
+
+          <div class="timeline-logo-circle">
             <img src="psg-logo.png" alt="PSG Logo" />
           </div>
-          <div class="timeline-date">SEPT 2020 – JULY 2023</div>
 
-          <h3 class="entry-header">
-            Bachelors of Business Administration (Information Systems)
-          </h3>
-          <div class="entry-sub">PSG College of Arts and Science</div>
-          <div class="entry-text">
-            <p>
-              Built a strong base in business, IT, and analytics – understanding how systems, data,
-              and people come together to drive decisions.
-            </p>
-            <p>CGPA: 8.8 / 10</p>
+          <div class="timeline-date-pill">
+            SEPT 2020 – JULY 2023
           </div>
         </div>
 
         <!-- MBA -->
-        <div class="timeline-entry right fade-in">
-          <div class="timeline-icon">
+        <div class="timeline-entry right fade-on-scroll">
+          <div class="timeline-card">
+            <h3 class="timeline-heading">
+              Masters of Business Administration<br />
+              <span class="sub">(Information Systems)</span>
+            </h3>
+            <p class="timeline-sub">The University of Toledo</p>
+            <p class="timeline-body">
+              Leveled up into advanced analytics, strategy, and real-world projects
+              connecting data to business outcomes.
+            </p>
+            <p class="timeline-meta">GPA: <strong>3.4 / 4.0</strong></p>
+          </div>
+
+          <div class="timeline-logo-circle">
             <img src="utoledo-logo.png" alt="University of Toledo Logo" />
           </div>
-          <div class="timeline-date">AUG 2023 – MAY 2025</div>
 
-          <h3 class="entry-header">
-            Masters of Business Administration (Information Systems)
-          </h3>
-          <div class="entry-sub">The University of Toledo</div>
-          <div class="entry-text">
-            <p>
-              Leveled up into advanced analytics, strategy, and real-world projects connecting data
-              to business outcomes.
-            </p>
-            <p>GPA: 3.4 / 4.0</p>
+          <div class="timeline-date-pill">
+            AUG 2023 – MAY 2025
           </div>
         </div>
 
-        <!-- TRI BEE -->
-        <div class="timeline-entry left fade-in">
-          <div class="timeline-icon">
+        <!-- Tri Bee -->
+        <div class="timeline-entry left fade-on-scroll">
+          <div class="timeline-card">
+            <h3 class="timeline-heading">
+              Tri Bee — <span class="sub">Data Analytics Intern</span>
+            </h3>
+            <p class="timeline-sub">Remote</p>
+            <p class="timeline-body">
+              Analyzed and prepared IT performance data using SQL and Python to
+              uncover key operational trends.
+            </p>
+            <p class="timeline-body">
+              Designed interactive Power BI dashboards to present insights and
+              guide strategic decision-making.
+            </p>
+          </div>
+
+          <div class="timeline-logo-circle">
             <img src="tribee-logo.png" alt="Tri Bee Logo" />
           </div>
-          <div class="timeline-date">JAN 2024 – JUNE 2024</div>
 
-          <h3 class="entry-header">Tri Bee — Data Analytics Intern</h3>
-          <div class="entry-sub">Remote</div>
-          <div class="entry-text">
-            <p>
-              Analyzed and prepared IT performance data using SQL and Python to uncover key
-              operational trends.
-            </p>
-            <p>
-              Designed interactive Power BI dashboards to present insights and guide strategic
-              decision-making.
-            </p>
+          <div class="timeline-date-pill">
+            JAN 2024 – JUNE 2024
           </div>
         </div>
       </div>
