@@ -1,17 +1,16 @@
-// Intersection Observer for fade / slide animations
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section, .hero-title, .hero-image");
 
-const observerOptions = {
-  threshold: 0.2
-};
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right").forEach((el) => {
-  observer.observe(el);
+  sections.forEach(sec => observer.observe(sec));
 });
