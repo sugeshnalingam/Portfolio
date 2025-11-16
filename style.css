@@ -1,115 +1,230 @@
-/* ================================
-   FONTS & GLOBAL
-================================= */
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Raleway:ital,wght@1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+/* ===== GLOBAL / BASE ===== */
 
-:root {
-  --bg: #000000;
-  --wine: #8A001C;
-  --grey: #c4c4c4;
-  --card-bg: rgba(40, 0, 20, 0.85);
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: #fff;
-  font-family: 'Kalam', cursive;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  height: 100%;
 }
 
-section {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: #000;
+  color: #f5f5f5;
 }
 
-/* ================================
-   PAGE 1: HERO
-================================= */
+/* ===================================== */
+/* ============== PAGE 1 =============== */
+/* === YOUR ORIGINAL HERO, UNTOUCHED === */
+/* ===================================== */
 
 .hero {
-  position: relative;
-  text-align: center;
-  padding-top: 110px;
-  background: radial-gradient(circle at top, #111 0, #000 55%);
-  overflow: hidden;
+  min-height: 100vh;
+  background: #000;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
 }
 
-.name-tag {
-  position: absolute;
-  top: 22px;
-  right: 40px;
-  font-size: 18px;
-  font-family: 'Raleway', sans-serif;
+/* ===== Top bar / name ===== */
+
+.top-bar {
+  padding: 24px 52px 0 52px;
+  text-align: right;
+}
+
+.logo {
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #e0e0e0;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.logo:hover {
   color: #ffffff;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
 }
 
-.hero-subtitle {
-  font-family: 'Raleway', sans-serif;
-  font-size: 26px;
-  color: var(--grey);
-  margin-bottom: -35px;
+/* ===== Hero content ===== */
+
+.hero-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 24px 80px;
 }
 
-.hero-title {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 160px;
-  letter-spacing: 24px;
-  color: var(--wine);
-  text-shadow:
-    0 0 30px rgba(255,0,70,0.55),
-    0 0 60px rgba(255,0,70,0.45);
+.text-block {
+  text-align: center;
+  position: relative;
+}
+
+/* "welcome to my" – script style similar to your reference */
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-family: "Pacifico", cursive;
+  font-size: clamp(26px, 3vw, 38px);
+  color: #c6c6c6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ===== PORTFOLIO headline ===== */
+
+.headline {
+  position: relative;
   margin: 0;
+
+  font-family: "Limelight", serif; /* Broadway vibe */
+  font-size: clamp(120px, 18vw, 260px); /* EVEN BIGGER */
+  letter-spacing: -0.02em; /* tighten spacing */
+  color: #7a001f; /* wine red */
+
+  text-transform: uppercase;
+  line-height: 0.8;
+  white-space: nowrap;
+
+  animation: headlineGlow 4s ease-in-out infinite alternate;
 }
 
-/* Your image locked to page 1 only */
-.hero-image {
+/* Light/glow behind the letters */
+.headline::before {
+  content: "";
+  position: absolute;
+  inset: 12% 8%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 0, 87, 0.24),
+    rgba(0, 0, 0, 0.1),
+    transparent 60%
+  );
+  filter: blur(22px);
+  opacity: 0.55;
+  z-index: -1;
+  animation: haloPulse 5s ease-in-out infinite alternate;
+}
+
+/* ===== Photo in the middle ===== */
+
+.photo-wrapper {
   position: absolute;
   left: 50%;
-  bottom: 10%;          /* <- controls how low you stand */
-  transform: translateX(-50%);
-  z-index: 20;
+  top: 55%;
+  transform: translate(-50%, -10%);
+  pointer-events: none;
 }
 
-.hero-image img {
-  width: 370px;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.9));
+.hero-photo {
+  width: clamp(320px, 26vw, 420px); /* bigger image */
+  display: block;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.9));
+  animation: floatUpDown 5s ease-in-out infinite alternate;
 }
 
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: var(--grey);
+/* ===== Animations ===== */
+
+@keyframes headlineGlow {
+  0% {
+    text-shadow: 0 0 12px rgba(122, 0, 31, 0.4),
+      0 0 25px rgba(122, 0, 31, 0.15);
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 0, 80, 0.8),
+      0 0 40px rgba(255, 0, 80, 0.4);
+    transform: translateY(-5px);
+  }
 }
 
-/* ================================
-   PAGE 2: ABOUT ME
-================================= */
+@keyframes haloPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.07);
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translate(-50%, -10%) translateY(4px);
+  }
+  100% {
+    transform: translate(-50%, -10%) translateY(-6px);
+  }
+}
+
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 900px) {
+  .top-bar {
+    padding: 20px 24px 0 24px;
+  }
+
+  .logo {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .headline::before {
+    inset: 18% 6%;
+  }
+
+  .photo-wrapper {
+    top: 57%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding-bottom: 60px;
+  }
+
+  .headline {
+    font-size: clamp(70px, 22vw, 140px);
+  }
+
+  .hero-photo {
+    width: clamp(260px, 45vw, 320px);
+  }
+
+  .photo-wrapper {
+    top: 58%;
+  }
+}
+
+/* ===================================== */
+/* ============== PAGE 2 =============== */
+/* ===================================== */
 
 .about {
   padding: 80px 90px 80px 90px;
+  background: #000;
 }
 
 .about-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: "Cinzel Decorative", serif;
   font-size: 90px;
-  color: var(--wine);
+  color: #8a001c;
   text-shadow:
-    0 0 25px rgba(255,0,70,0.5),
-    0 0 55px rgba(255,0,70,0.4);
+    0 0 25px rgba(255, 0, 70, 0.5),
+    0 0 55px rgba(255, 0, 70, 0.4);
   margin: 0 0 40px 0;
 }
 
@@ -122,9 +237,10 @@ section {
 
 .about-text {
   width: 55%;
+  font-family: "Kalam", cursive;
   font-size: 24px;
   line-height: 1.8;
-  color: var(--grey);
+  color: #cccccc;
 }
 
 .about-animation {
@@ -134,28 +250,110 @@ section {
   align-items: center;
 }
 
-.about-animation img {
-  width: 80%;
-  max-width: 420px;
-  filter: drop-shadow(0 0 28px rgba(255,0,60,0.45));
-  opacity: 0.95;
+/* animated chart */
+
+.chart-halo {
+  position: relative;
+  width: 320px;
+  height: 260px;
+  border-radius: 30px;
+  background: radial-gradient(circle at center, #3b000b 0, #000 75%);
+  box-shadow:
+    0 0 40px rgba(255, 0, 70, 0.45),
+    0 0 80px rgba(255, 0, 70, 0.35);
+  overflow: hidden;
 }
 
-/* ================================
-   PAGE 3: JOURNEY
-================================= */
+.bar {
+  position: absolute;
+  bottom: 40px;
+  width: 26px;
+  border-radius: 20px 20px 6px 6px;
+  background: linear-gradient(to top, #ffffff, #dddddd);
+  opacity: 0.9;
+  animation: barPulse 3s ease-in-out infinite;
+}
+
+.bar1 {
+  left: 50px;
+  height: 60px;
+  animation-delay: 0s;
+}
+.bar2 {
+  left: 110px;
+  height: 110px;
+  animation-delay: 0.3s;
+}
+.bar3 {
+  left: 170px;
+  height: 90px;
+  animation-delay: 0.6s;
+}
+.bar4 {
+  left: 230px;
+  height: 140px;
+  animation-delay: 0.9s;
+}
+
+@keyframes barPulse {
+  0%,
+  100% {
+    transform: scaleY(0.9);
+  }
+  50% {
+    transform: scaleY(1.15);
+  }
+}
+
+.chart-line {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.4));
+  opacity: 0.8;
+}
+
+.dot {
+  position: absolute;
+  bottom: 79px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+.dot1 {
+  left: 48px;
+}
+.dot2 {
+  left: 108px;
+}
+.dot3 {
+  left: 168px;
+}
+.dot4 {
+  left: 228px;
+}
+
+/* ===================================== */
+/* ============== PAGE 3 =============== */
+/* ===================================== */
 
 .journey {
   padding: 60px 0 120px 0;
+  background: #000;
 }
 
 .journey-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: "Cinzel Decorative", serif;
   font-size: 85px;
-  color: var(--wine);
+  color: #8a001c;
   text-shadow:
-    0 0 30px rgba(255,0,70,0.55),
-    0 0 60px rgba(255,0,70,0.45);
+    0 0 30px rgba(255, 0, 70, 0.55),
+    0 0 60px rgba(255, 0, 70, 0.45);
   text-align: center;
   margin: 0;
 }
@@ -173,8 +371,8 @@ section {
   top: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--wine), #300009);
-  box-shadow: 0 0 25px rgba(255,0,70,0.4);
+  background: linear-gradient(to bottom, #8a001c, #300009);
+  box-shadow: 0 0 25px rgba(255, 0, 70, 0.4);
 }
 
 /* Single card */
@@ -182,10 +380,11 @@ section {
   position: relative;
   width: 46%;
   padding: 40px 36px;
-  background: var(--card-bg);
+  background: rgba(40, 0, 20, 0.85);
   border-radius: 24px;
-  box-shadow: 0 0 30px rgba(255,0,70,0.35);
+  box-shadow: 0 0 30px rgba(255, 0, 70, 0.35);
   margin: 90px 0;
+  font-family: "Kalam", cursive;
 }
 
 /* Left side card */
@@ -215,15 +414,15 @@ section {
   padding: 10px;
   object-fit: contain;
   box-shadow:
-    0 0 18px rgba(255,0,70,0.7),
-    0 0 35px rgba(255,0,70,0.45);
+    0 0 18px rgba(255, 0, 70, 0.7),
+    0 0 35px rgba(255, 0, 70, 0.45);
 }
 
 /* Date pill */
 .timeline-date {
   position: absolute;
   top: 40px;
-  background: var(--wine);
+  background: #8a001c;
   color: #fff;
   padding: 10px 26px;
   border-radius: 50px;
@@ -248,7 +447,7 @@ section {
 
 .entry-sub {
   font-size: 20px;
-  color: var(--grey);
+  color: #c4c4c4;
   margin-bottom: 18px;
 }
 
@@ -258,9 +457,9 @@ section {
   line-height: 1.7;
 }
 
-/* ================================
-   FADE-IN ANIMATION (OPTIONAL)
-================================= */
+/* ===================================== */
+/* ===== FADE-IN (for about/journey) ==== */
+/* ===================================== */
 
 .fade-in {
   opacity: 0;
@@ -273,20 +472,19 @@ section {
   transform: translateY(0);
 }
 
-/* Responsive-ish tweak */
+/* ========== Responsive for lower widths ========== */
+
 @media (max-width: 900px) {
-  .hero-title {
-    font-size: 90px;
-    letter-spacing: 10px;
-  }
-  .hero-image img {
-    width: 260px;
+  .about {
+    padding: 60px 24px 80px 24px;
   }
 
   .about-container {
     flex-direction: column;
   }
-  .about-text, .about-animation {
+
+  .about-text,
+  .about-animation {
     width: 100%;
   }
 
@@ -302,6 +500,6 @@ section {
     position: relative;
     left: auto !important;
     right: auto !important;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 }
