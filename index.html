@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sugeshna Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Limelight&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="hero">
-      <header class="top-bar">
-        <span class="logo">
-          SUGESHNA SANTHALINGAM SUBBULAKSHMI
-        </span>
-      </header>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
 
-      <main class="hero-content">
-        <div class="text-block">
-          <p class="eyebrow">welcome to my</p>
+  <!-- TOP NAME WITH UNDERLINE ANIMATION -->
+  <header class="top-name">
+    SUGESHNA SANTHALINGAM SUBBULAKSHMI
+  </header>
 
-          <h1 class="headline">
-            PORTFOLIO
-          </h1>
-        </div>
+  <!-- PAGE 1 : HERO / PORTFOLIO -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="welcome">WELCOME TO MY</h2>
 
-        <div class="photo-wrapper">
-          <!-- make sure this file is literally named me.png in the repo -->
-          <img src="me.png" alt="Sugeshna in blazer" class="hero-photo" />
-        </div>
-      </main>
+      <h1 class="title">
+        <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+      </h1>
+
+      <img src="me.png" class="me" alt="Sugeshna">
     </div>
-  </body>
+  </section>
+
+  <!-- PAGE 2 : ABOUT ME -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <!-- LEFT SIDE TEXT -->
+      <div class="about-text slide-target">
+        <h2 class="about-title">ABOUT&nbsp;ME</h2>
+
+        <p>Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.</p>
+        <p>I blend data, creativity, and people skills – with real sales experience and a mind that loves patterns.</p>
+        <p>I bring both logic + hustle wherever I go.</p>
+        <p>Not perfect, not finished – but fully committed to building something bigger.</p>
+      </div>
+
+      <!-- RIGHT SIDE ANIMATION -->
+      <div class="about-visual">
+        <div class="data-glow"></div>
+
+        <div class="chart">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+          <div class="bar bar4"></div>
+        </div>
+
+        <div class="nodes">
+          <div class="node node1"></div>
+          <div class="node node2"></div>
+          <div class="node node3"></div>
+          <div class="node node4"></div>
+          <div class="connection c1"></div>
+          <div class="connection c2"></div>
+          <div class="connection c3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
 </html>
