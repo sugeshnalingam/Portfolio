@@ -1,13 +1,13 @@
-// Simple fade-in for elements with .fade-in
+// Small fade-in observer for .fade-in sections
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
       }
     });
   },
   { threshold: 0.15 }
 );
 
-document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
