@@ -1,16 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".section, .hero-title, .hero-image");
+// Simple fade-in for elements with .fade-in
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.25 }
-  );
-
-  sections.forEach(sec => observer.observe(sec));
-});
+document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
