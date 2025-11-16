@@ -5,15 +5,27 @@
   --greyText: #b3b3b3;
 }
 
-* {
+/* RESET / BASE */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
   background: var(--bg);
   color: #ffffff;
   overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
 
 /* ---------- TOP NAME WITH UNDERLINE ANIMATION ---------- */
@@ -23,7 +35,7 @@ body {
   top: 25px;
   right: 40px;
   z-index: 1000;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   font-size: 22px;
   letter-spacing: 3px;
   color: #ffffff;
@@ -50,17 +62,10 @@ body {
   width: 100%;
 }
 
-/* ---------- SECTION LAYOUT ---------- */
-
-.hero,
-.about {
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* ---------- PAGE 1 : HERO ---------- */
+/* ---------- PAGE 1: HERO / PORTFOLIO ---------- */
 
 .hero {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,26 +77,31 @@ body {
   position: relative;
 }
 
+/* "WELCOME TO MY" – Kalam */
+
 .welcome {
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   font-size: 40px;
   color: var(--grey);
   margin-bottom: -40px;
 }
 
-/* PORTFOLIO LETTERING */
+/* PORTFOLIO main text */
 
 .title {
-  font-family: 'Limelight', sans-serif;
+  font-family: "Limelight", sans-serif;
   font-size: 280px;
   color: var(--wine);
   letter-spacing: -25px;
   position: relative;
   z-index: 1;
-  text-shadow: 0 0 25px rgba(136, 0, 27, 0.7);
+  text-shadow:
+    0 0 10px rgba(136, 0, 27, 0.9),
+    0 0 25px rgba(136, 0, 27, 0.7),
+    0 0 45px rgba(136, 0, 27, 0.5);
 }
 
-/* LETTER APPEAR ANIMATION */
+/* Per-letter animation */
 
 .title span {
   display: inline-block;
@@ -110,25 +120,32 @@ body {
 .title span:nth-child(9) { animation-delay: 0.9s; }
 
 @keyframes pop {
-  0% { transform: translateY(40px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* YOUR IMAGE */
+/* Your image – bigger & pushed left */
 
 .me {
-  width: 360px;
+  width: 400px;
   position: absolute;
   bottom: -30px;
   left: 50%;
-  transform: translateX(-10%);
+  transform: translateX(-38%); /* adjust left-right balance */
   z-index: 2;
   filter: brightness(1.2);
 }
 
-/* ---------- PAGE 2 : ABOUT ME ---------- */
+/* ---------- PAGE 2: ABOUT ME ---------- */
 
 .about {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,8 +173,10 @@ body {
   transform: translateX(0);
 }
 
+/* ABOUT ME title – same style as PORTFOLIO but smaller */
+
 .about-title {
-  font-family: 'Limelight', sans-serif;
+  font-family: "Limelight", sans-serif;
   font-size: 72px;
   letter-spacing: 10px;
   color: var(--wine);
@@ -165,8 +184,10 @@ body {
   margin: 0 0 30px 0;
 }
 
+/* ABOUT text – Kalam, grey */
+
 .about-text p {
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   font-size: 22px;
   color: var(--greyText);
   line-height: 1.6;
@@ -174,7 +195,7 @@ body {
   margin: 0 0 14px 0;
 }
 
-/* RIGHT SIDE "DATA" ANIMATION */
+/* RIGHT SIDE VISUAL */
 
 .about-visual {
   flex: 1;
@@ -186,14 +207,14 @@ body {
   overflow: visible;
 }
 
-/* Subtle wine-red glow behind the visuals */
+/* Wine red glow behind the visuals */
 
 .data-glow {
   position: absolute;
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(136,0,27,0.45) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(136, 0, 27, 0.45) 0%, transparent 60%);
   filter: blur(6px);
   z-index: 0;
 }
@@ -210,7 +231,7 @@ body {
 
 .bar {
   width: 26px;
-  background: linear-gradient(to top, rgba(255,255,255,0.15), #ffffff);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.15), #ffffff);
   border-radius: 8px 8px 0 0;
   animation: barPulse 1.8s ease-in-out infinite;
 }
@@ -221,8 +242,15 @@ body {
 .bar4 { height: 210px; animation-delay: 0.6s; }
 
 @keyframes barPulse {
-  0%, 100% { transform: scaleY(0.7); opacity: 0.6; }
-  50% { transform: scaleY(1); opacity: 1; }
+  0%,
+  100% {
+    transform: scaleY(0.7);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 /* Network nodes */
@@ -240,7 +268,7 @@ body {
   height: 12px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   animation: nodePulse 2.4s ease-in-out infinite;
 }
 
@@ -250,8 +278,15 @@ body {
 .node4 { bottom: 10%; right: 32%; animation-delay: 0.9s; }
 
 @keyframes nodePulse {
-  0%, 100% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.2); opacity: 1; }
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
 /* Connections between nodes */
@@ -259,7 +294,12 @@ body {
 .connection {
   position: absolute;
   height: 2px;
-  background: linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1));
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1),
+    #ffffff,
+    rgba(255, 255, 255, 0.1)
+  );
   opacity: 0.7;
 }
 
@@ -282,4 +322,57 @@ body {
   left: 35%;
   width: 35%;
   transform: rotate(10deg);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1000px) {
+  .about {
+    padding: 100px 40px;
+  }
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .about-text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-name {
+    font-size: 14px;
+    right: 20px;
+    left: 20px;
+    text-align: right;
+  }
+
+  .welcome {
+    font-size: 28px;
+    margin-bottom: -20px;
+  }
+
+  .title {
+    font-size: 160px;
+    letter-spacing: -12px;
+  }
+
+  .me {
+    width: 280px;
+    transform: translateX(-50%);
+  }
+
+  .about {
+    padding: 100px 24px;
+  }
+
+  .about-title {
+    font-size: 52px;
+    letter-spacing: 6px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+  }
 }
