@@ -1,4 +1,4 @@
-/* ===== GLOBAL / BASE ===== */
+/* ===== GLOBAL RESET ===== */
 
 *,
 *::before,
@@ -18,12 +18,12 @@ body {
     "Segoe UI", sans-serif;
   background-color: #000;
   color: #f5f5f5;
+  scroll-behavior: smooth;
 }
 
-/* ===================================== */
-/* ============== PAGE 1 =============== */
-/* === YOUR ORIGINAL HERO, UNTOUCHED === */
-/* ===================================== */
+/* ========================================= */
+/* ========== PAGE 1 – HERO ONLY =========== */
+/* ========================================= */
 
 .hero {
   min-height: 100vh;
@@ -41,17 +41,22 @@ body {
 }
 
 .logo {
+  font-family: "Kalam", cursive;       /* CHANGED */
   font-size: 0.78rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #e0e0e0;
-  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease,
+    text-decoration-color 0.25s ease;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
 }
 
 .logo:hover {
   color: #ffffff;
   text-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
   transform: translateY(-2px);
+  text-decoration: underline;          /* HOVER UNDERLINE */
 }
 
 /* ===== Hero content ===== */
@@ -71,14 +76,14 @@ body {
   position: relative;
 }
 
-/* "welcome to my" – script style similar to your reference */
+/* "welcome to my" – now Kalam */
 
 .eyebrow {
   margin: 0 0 18px;
-  font-family: "Pacifico", cursive;
-  font-size: clamp(26px, 3vw, 38px);
+  font-family: "Kalam", cursive;       /* CHANGED */
+  font-size: clamp(24px, 2.8vw, 34px);
   color: #c6c6c6;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -89,9 +94,9 @@ body {
   margin: 0;
 
   font-family: "Limelight", serif; /* Broadway vibe */
-  font-size: clamp(120px, 18vw, 260px); /* EVEN BIGGER */
-  letter-spacing: -0.02em; /* tighten spacing */
-  color: #7a001f; /* wine red */
+  font-size: clamp(120px, 18vw, 260px);
+  letter-spacing: -0.02em;
+  color: #7a001f;
 
   text-transform: uppercase;
   line-height: 0.8;
@@ -123,19 +128,20 @@ body {
 .photo-wrapper {
   position: absolute;
   left: 50%;
-  top: 55%;
-  transform: translate(-50%, -10%);
+  top: 58%;                           /* lowered so full body shows */
+  transform: translate(-50%, -28%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-photo {
-  width: clamp(320px, 26vw, 420px); /* bigger image */
+  width: clamp(320px, 25vw, 410px);
   display: block;
   filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.9));
   animation: floatUpDown 5s ease-in-out infinite alternate;
 }
 
-/* ===== Animations ===== */
+/* ===== Animations for hero ===== */
 
 @keyframes headlineGlow {
   0% {
@@ -163,10 +169,10 @@ body {
 
 @keyframes floatUpDown {
   0% {
-    transform: translate(-50%, -10%) translateY(4px);
+    transform: translate(-50%, -28%) translateY(4px);
   }
   100% {
-    transform: translate(-50%, -10%) translateY(-6px);
+    transform: translate(-50%, -28%) translateY(-6px);
   }
 }
 
@@ -187,7 +193,7 @@ body {
   }
 
   .photo-wrapper {
-    top: 57%;
+    top: 60%;
   }
 }
 
@@ -205,301 +211,470 @@ body {
   }
 
   .photo-wrapper {
-    top: 58%;
+    top: 62%;
   }
 }
 
-/* ===================================== */
-/* ============== PAGE 2 =============== */
-/* ===================================== */
+/* ========================================= */
+/* ========== PAGE 2 – ABOUT ME ============ */
+/* ========================================= */
 
-.about {
-  padding: 80px 90px 80px 90px;
+.about-section {
+  min-height: 100vh;
   background: #000;
-}
-
-.about-title {
-  font-family: "Cinzel Decorative", serif;
-  font-size: 90px;
-  color: #8a001c;
-  text-shadow:
-    0 0 25px rgba(255, 0, 70, 0.5),
-    0 0 55px rgba(255, 0, 70, 0.4);
-  margin: 0 0 40px 0;
-}
-
-.about-container {
+  color: #f5f5f5;
   display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 8vw;
+}
+
+.about-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 80px;
   align-items: center;
 }
 
 .about-text {
-  width: 55%;
-  font-family: "Kalam", cursive;
-  font-size: 24px;
-  line-height: 1.8;
-  color: #cccccc;
+  z-index: 1;
 }
 
-.about-animation {
-  width: 45%;
+.about-title {
+  margin: 0 0 32px;
+  font-family: "Limelight", serif;
+  font-size: clamp(52px, 6vw, 76px);
+  letter-spacing: 0.12em;
+  color: #7a001f;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 14px rgba(122, 0, 31, 0.7);
+}
+
+.about-title::before {
+  content: "";
+  position: absolute;
+  inset: 15% 10%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 0, 87, 0.25),
+    transparent 60%
+  );
+  filter: blur(25px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.about-copy {
+  font-family: "Kalam", cursive;
+  font-size: 1.25rem;
+  color: #d2d2d2;
+  line-height: 1.6;
+}
+
+.about-copy p {
+  margin: 0 0 12px;
+}
+
+/* Right-side animated chart */
+
+.about-visual {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* animated chart */
-
-.chart-halo {
+.data-chart {
   position: relative;
-  width: 320px;
-  height: 260px;
-  border-radius: 30px;
-  background: radial-gradient(circle at center, #3b000b 0, #000 75%);
-  box-shadow:
-    0 0 40px rgba(255, 0, 70, 0.45),
-    0 0 80px rgba(255, 0, 70, 0.35);
+  width: min(360px, 70vw);
+  height: min(260px, 55vw);
+  border-radius: 24px;
+  background: radial-gradient(circle at center, #1a0009 0%, #050505 60%);
   overflow: hidden;
+  box-shadow: 0 0 45px rgba(122, 0, 31, 0.55);
+}
+
+.chart-glow {
+  position: absolute;
+  inset: 15% 20%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.18),
+    transparent 65%
+  );
+  filter: blur(15px);
+}
+
+/* Bars */
+
+.bars {
+  position: absolute;
+  inset: 15% 15% 18% 20%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .bar {
-  position: absolute;
-  bottom: 40px;
-  width: 26px;
-  border-radius: 20px 20px 6px 6px;
-  background: linear-gradient(to top, #ffffff, #dddddd);
-  opacity: 0.9;
-  animation: barPulse 3s ease-in-out infinite;
+  width: 14%;
+  border-radius: 999px 999px 4px 4px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.85)
+  );
+  opacity: 0.95;
+  transform-origin: bottom;
+  animation: barPulse 2.8s ease-in-out infinite alternate;
 }
 
-.bar1 {
-  left: 50px;
-  height: 60px;
+.bar-1 {
+  height: 30%;
   animation-delay: 0s;
 }
-.bar2 {
-  left: 110px;
-  height: 110px;
-  animation-delay: 0.3s;
+.bar-2 {
+  height: 55%;
+  animation-delay: 0.2s;
 }
-.bar3 {
-  left: 170px;
-  height: 90px;
+.bar-3 {
+  height: 42%;
+  animation-delay: 0.4s;
+}
+.bar-4 {
+  height: 72%;
   animation-delay: 0.6s;
 }
-.bar4 {
-  left: 230px;
-  height: 140px;
-  animation-delay: 0.9s;
-}
 
-@keyframes barPulse {
-  0%,
-  100% {
-    transform: scaleY(0.9);
-  }
-  50% {
-    transform: scaleY(1.15);
-  }
-}
+/* Line on top of bars */
 
 .chart-line {
   position: absolute;
-  left: 40px;
-  right: 40px;
-  bottom: 80px;
-  height: 2px;
-  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.4));
-  opacity: 0.8;
+  inset: 26% 10% 34% 10%;
+  pointer-events: none;
+}
+
+/* Dots following the line */
+
+.chart-dots {
+  position: absolute;
+  inset: 26% 10% 34% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dot {
-  position: absolute;
-  bottom: 79px;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  opacity: 0.0;
+  animation: dotBlink 2.1s ease-in-out infinite alternate;
 }
 
-.dot1 {
-  left: 48px;
-}
-.dot2 {
-  left: 108px;
-}
-.dot3 {
-  left: 168px;
-}
-.dot4 {
-  left: 228px;
+.dot-1 { animation-delay: 0s; }
+.dot-2 { animation-delay: 0.2s; }
+.dot-3 { animation-delay: 0.4s; }
+.dot-4 { animation-delay: 0.6s; }
+.dot-5 { animation-delay: 0.8s; }
+
+@keyframes barPulse {
+  0% {
+    transform: scaleY(0.9);
+  }
+  100% {
+    transform: scaleY(1.08);
+  }
 }
 
-/* ===================================== */
-/* ============== PAGE 3 =============== */
-/* ===================================== */
+@keyframes dotBlink {
+  0% { opacity: 0.1; }
+  100% { opacity: 1; }
+}
 
-.journey {
-  padding: 60px 0 120px 0;
+/* Responsive for about page */
+
+@media (max-width: 950px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-text {
+    order: 1;
+  }
+
+  .about-visual {
+    order: 2;
+  }
+}
+
+/* ========================================= */
+/* ========== PAGE 3 – TIMELINE ============ */
+/* ========================================= */
+
+.journey-section {
+  min-height: 100vh;
   background: #000;
+  padding: 80px 8vw 120px;
+  color: #f5f5f5;
 }
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.journey-tagline {
+  margin: 0 0 8px;
+  font-family: "Kalam", cursive;
+  font-size: 1.1rem;
+  color: #d3d3d3;
+}
+
+/* Main title with emphasis on "Information Systems" */
 
 .journey-title {
-  font-family: "Cinzel Decorative", serif;
-  font-size: 85px;
-  color: #8a001c;
-  text-shadow:
-    0 0 30px rgba(255, 0, 70, 0.55),
-    0 0 60px rgba(255, 0, 70, 0.45);
-  text-align: center;
   margin: 0;
+  font-family: "Limelight", serif;
+  font-size: clamp(34px, 4.4vw, 52px);
+  letter-spacing: 0.16em;
+  color: #7a001f;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(122, 0, 31, 0.8);
+  position: relative;
+  white-space: nowrap;
 }
+
+.journey-title::before {
+  content: "";
+  position: absolute;
+  inset: 20% 22%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 0, 87, 0.3),
+    transparent 65%
+  );
+  filter: blur(30px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* Smaller MY / JOURNEY, strong INFORMATION SYSTEMS */
+
+.journey-soft {
+  font-size: 0.7em;
+  letter-spacing: 0.18em;
+  color: #c7c7c7;
+}
+
+.journey-strong {
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+
+/* Timeline layout */
 
 .timeline {
   position: relative;
-  width: 90%;
-  margin: 80px auto 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0 0;
 }
 
-.timeline-line {
+/* Center vertical line */
+.timeline::before {
+  content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #8a001c, #300009);
-  box-shadow: 0 0 25px rgba(255, 0, 70, 0.4);
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(122, 0, 31, 0),
+    rgba(122, 0, 31, 0.9),
+    rgba(122, 0, 31, 0)
+  );
 }
 
-/* Single card */
+/* Each entry */
+
 .timeline-entry {
   position: relative;
-  width: 46%;
-  padding: 40px 36px;
-  background: rgba(40, 0, 20, 0.85);
-  border-radius: 24px;
-  box-shadow: 0 0 30px rgba(255, 0, 70, 0.35);
-  margin: 90px 0;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.timeline-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Card */
+
+.timeline-card {
+  max-width: 480px;
+  padding: 28px 32px;
+  border-radius: 18px;
+  background: #150008;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(122, 0, 31, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.timeline-heading {
+  margin: 0 0 10px;
   font-family: "Kalam", cursive;
+  font-size: 1.4rem;
 }
 
-/* Left side card */
-.timeline-entry.left {
+.timeline-heading .sub {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.timeline-sub {
+  margin: 0 0 8px;
+  font-family: "Kalam", cursive;
+  font-size: 1rem;
+  color: #e5e5e5;
+}
+
+.timeline-body {
+  margin: 0 0 6px;
+  font-family: "Kalam", cursive;
+  font-size: 0.98rem;
+  color: #d0d0d0;
+}
+
+.timeline-meta {
+  margin: 8px 0 0;
+  font-family: "Kalam", cursive;
+  font-size: 0.98rem;
+  color: #f5f5f5;
+}
+
+/* Left / Right alignment */
+
+.timeline-entry.left .timeline-card {
   margin-right: auto;
+  margin-left: 0;
+  transform-origin: right;
 }
 
-/* Right side card */
-.timeline-entry.right {
+.timeline-entry.right .timeline-card {
   margin-left: auto;
+  margin-right: 0;
+  transform-origin: left;
 }
 
-/* Icon — sits on center line */
-.timeline-icon {
+/* Logo circle on center line */
+
+.timeline-logo-circle {
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: -45px;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
-.timeline-icon img {
+  transform: translate(-50%, -50%);
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: #ffffff;
-  padding: 10px;
-  object-fit: contain;
-  box-shadow:
-    0 0 18px rgba(255, 0, 70, 0.7),
-    0 0 35px rgba(255, 0, 70, 0.45);
+  background: #050505;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9),
+    0 0 35px rgba(122, 0, 31, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
-/* Date pill */
-.timeline-date {
+.timeline-logo-circle img {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+/* Date pill on opposite side of card */
+
+.timeline-date-pill {
   position: absolute;
-  top: 40px;
-  background: #8a001c;
-  color: #fff;
-  padding: 10px 26px;
-  border-radius: 50px;
-  font-size: 19px;
-  letter-spacing: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: #7a001f;
+  color: #fdfdfd;
+  font-family: "Kalam", cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 25px rgba(122, 0, 31, 0.8);
+  white-space: nowrap;
 }
 
-/* Date left vs right positioning */
-.timeline-entry.left .timeline-date {
-  right: -260px;
+/* Place date pill opposite the card */
+.timeline-entry.left .timeline-date-pill {
+  left: 50%;
+  margin-left: 80px;
 }
 
-.timeline-entry.right .timeline-date {
-  left: -260px;
+.timeline-entry.right .timeline-date-pill {
+  right: 50%;
+  margin-right: 80px;
 }
 
-/* Text inside cards */
-.entry-header {
-  font-size: 30px;
-  margin: 20px 0 10px 0;
-}
-
-.entry-sub {
-  font-size: 20px;
-  color: #c4c4c4;
-  margin-bottom: 18px;
-}
-
-.entry-text {
-  font-size: 18px;
-  color: #e3e3e3;
-  line-height: 1.7;
-}
-
-/* ===================================== */
-/* ===== FADE-IN (for about/journey) ==== */
-/* ===================================== */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========== Responsive for lower widths ========== */
+/* Responsive: stack cards */
 
 @media (max-width: 900px) {
-  .about {
-    padding: 60px 24px 80px 24px;
+  .timeline::before {
+    left: 10%;
   }
 
-  .about-container {
-    flex-direction: column;
+  .timeline-entry {
+    padding-left: 18%;
   }
 
-  .about-text,
-  .about-animation {
-    width: 100%;
+  .timeline-card {
+    max-width: none;
   }
 
-  .timeline-entry,
-  .timeline-entry.left,
-  .timeline-entry.right {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+  .timeline-logo-circle {
+    left: 10%;
+    transform: translate(-50%, -50%);
   }
 
-  .timeline-date {
-    position: relative;
-    left: auto !important;
-    right: auto !important;
-    margin-bottom: 8px;
+  .timeline-date-pill {
+    left: 10%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    top: auto;
+    bottom: -36px;
   }
+
+  .timeline-entry.left .timeline-card,
+  .timeline-entry.right .timeline-card {
+    margin: 0 0 22px 0;
+  }
+}
+
+/* ========================================= */
+/* ===== Fade-in helper for JS scroll ====== */
+/* ========================================= */
+
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
