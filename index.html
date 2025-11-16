@@ -1,112 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sugeshna Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- PAGE 1: HERO -->
-  <section class="hero" id="hero">
-    <div class="name-tag">SUGESHNA SANTHALINGAM SUBBULAKSHMI</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sugeshna Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div class="hero-subtitle">welcome to my</div>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Poppins:wght@300;400;600&family=Kalam:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-    <h1 class="hero-title">PORTFOLIO</h1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ PAGE 1: YOUR ORIGINAL HERO ============ -->
+    <div class="hero" id="top">
+      <header class="top-bar">
+        <span class="logo">
+          SUGESHNA SANTHALINGAM SUBBULAKSHMI
+        </span>
+      </header>
 
-    <div class="hero-image">
-      <img src="me.png" alt="Sugeshna" />
+      <main class="hero-content">
+        <div class="text-block">
+          <p class="eyebrow">welcome to my</p>
+
+          <h1 class="headline">
+            PORTFOLIO
+          </h1>
+        </div>
+
+        <div class="photo-wrapper">
+          <!-- make sure this file is literally named me.png in the repo -->
+          <img src="me.png" alt="Sugeshna in blazer" class="hero-photo" />
+        </div>
+      </main>
     </div>
 
-    <div class="scroll-down">SCROLL</div>
-  </section>
+    <!-- ============ PAGE 2: ABOUT ME ============ -->
+    <section class="about" id="about">
+      <h2 class="about-title">ABOUT ME</h2>
 
-  <!-- PAGE 2: ABOUT ME -->
-  <section class="about" id="about">
-    <h2 class="about-title">ABOUT ME</h2>
-
-    <div class="about-container">
-      <div class="about-text fade-in">
-        <p>Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.</p>
-        <p>I blend data, creativity, and people skills – with real sales experience and a mind that loves patterns.</p>
-        <p>I bring both logic + hustle wherever I go.</p>
-        <p>Not perfect, not finished – but fully committed to building something bigger.</p>
-      </div>
-
-      <div class="about-animation fade-in">
-        <!-- This is your animated data-viz graphic; for now we just use the PNG you uploaded -->
-        <!-- Replace 'analytics.png' with your actual file name if different -->
-        <img src="analytics.png" alt="Data analytics animation" />
-      </div>
-    </div>
-  </section>
-
-  <!-- PAGE 3: JOURNEY -->
-  <section class="journey" id="journey">
-    <h2 class="journey-title">MY INFORMATION SYSTEMS JOURNEY</h2>
-
-    <div class="timeline">
-      <div class="timeline-line"></div>
-
-      <!-- ENTRY 1: BBA -->
-      <div class="timeline-entry left fade-in">
-        <div class="timeline-icon">
-          <img src="psg-logo.png" alt="PSG Logo" />
+      <div class="about-container">
+        <div class="about-text fade-in">
+          <p>Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.</p>
+          <p>
+            I blend data, creativity, and people skills – with real sales experience and a mind
+            that loves patterns.
+          </p>
+          <p>I bring both logic + hustle wherever I go.</p>
+          <p>Not perfect, not finished – but fully committed to building something bigger.</p>
         </div>
-        <div class="timeline-date">SEPT 2020 – JULY 2023</div>
 
-        <h3 class="entry-header">
-          Bachelors of Business Administration (Information Systems)
-        </h3>
-        <div class="entry-sub">
-          PSG College of Arts and Science
-        </div>
-        <div class="entry-text">
-          <p>Built a strong base in business, IT, and analytics – understanding how systems, data, and people come together to drive decisions.</p>
-          <p>CGPA: 8.8 / 10</p>
+        <div class="about-animation fade-in">
+          <div class="chart-halo">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="chart-line"></div>
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- ENTRY 2: MBA -->
-      <div class="timeline-entry right fade-in">
-        <div class="timeline-icon">
-          <img src="utoledo-logo.png" alt="University of Toledo Logo" />
-        </div>
-        <div class="timeline-date">AUG 2023 – MAY 2025</div>
+    <!-- ============ PAGE 3: MY IS JOURNEY (UNCHANGED SPIRIT) ============ -->
+    <section class="journey" id="journey">
+      <h2 class="journey-title">MY INFORMATION SYSTEMS JOURNEY</h2>
 
-        <h3 class="entry-header">
-          Masters of Business Administration (Information Systems)
-        </h3>
-        <div class="entry-sub">
-          The University of Toledo
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- BBA -->
+        <div class="timeline-entry left fade-in">
+          <div class="timeline-icon">
+            <img src="psg-logo.png" alt="PSG Logo" />
+          </div>
+          <div class="timeline-date">SEPT 2020 – JULY 2023</div>
+
+          <h3 class="entry-header">
+            Bachelors of Business Administration (Information Systems)
+          </h3>
+          <div class="entry-sub">PSG College of Arts and Science</div>
+          <div class="entry-text">
+            <p>
+              Built a strong base in business, IT, and analytics – understanding how systems, data,
+              and people come together to drive decisions.
+            </p>
+            <p>CGPA: 8.8 / 10</p>
+          </div>
         </div>
-        <div class="entry-text">
-          <p>Leveled up into advanced analytics, strategy, and real-world projects connecting data to business outcomes.</p>
-          <p>GPA: 3.4 / 4.0</p>
+
+        <!-- MBA -->
+        <div class="timeline-entry right fade-in">
+          <div class="timeline-icon">
+            <img src="utoledo-logo.png" alt="University of Toledo Logo" />
+          </div>
+          <div class="timeline-date">AUG 2023 – MAY 2025</div>
+
+          <h3 class="entry-header">
+            Masters of Business Administration (Information Systems)
+          </h3>
+          <div class="entry-sub">The University of Toledo</div>
+          <div class="entry-text">
+            <p>
+              Leveled up into advanced analytics, strategy, and real-world projects connecting data
+              to business outcomes.
+            </p>
+            <p>GPA: 3.4 / 4.0</p>
+          </div>
+        </div>
+
+        <!-- TRI BEE -->
+        <div class="timeline-entry left fade-in">
+          <div class="timeline-icon">
+            <img src="tribee-logo.png" alt="Tri Bee Logo" />
+          </div>
+          <div class="timeline-date">JAN 2024 – JUNE 2024</div>
+
+          <h3 class="entry-header">Tri Bee — Data Analytics Intern</h3>
+          <div class="entry-sub">Remote</div>
+          <div class="entry-text">
+            <p>
+              Analyzed and prepared IT performance data using SQL and Python to uncover key
+              operational trends.
+            </p>
+            <p>
+              Designed interactive Power BI dashboards to present insights and guide strategic
+              decision-making.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- ENTRY 3: TRI BEE -->
-      <div class="timeline-entry left fade-in">
-        <div class="timeline-icon">
-          <img src="tribee-logo.png" alt="Tri Bee Logo" />
-        </div>
-        <div class="timeline-date">JAN 2024 – JUNE 2024</div>
-
-        <h3 class="entry-header">
-          Tri Bee — Data Analytics Intern
-        </h3>
-        <div class="entry-sub">
-          Remote
-        </div>
-        <div class="entry-text">
-          <p>Analyzed and prepared IT performance data using SQL and Python to uncover key operational trends.</p>
-          <p>Designed interactive Power BI dashboards to present insights and guide strategic decision-making.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
