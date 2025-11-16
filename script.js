@@ -1,22 +1,18 @@
+// Simple fade-in for sections – nothing else.
 document.addEventListener("DOMContentLoaded", () => {
-  const faders = document.querySelectorAll(".fade-on-scroll");
-
-  if (!("IntersectionObserver" in window)) {
-    faders.forEach(el => el.classList.add("is-visible"));
-    return;
-  }
+  const sections = document.querySelectorAll(".section");
 
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.3 }
   );
 
-  faders.forEach(el => observer.observe(el));
+  sections.forEach((sec) => observer.observe(sec));
 });
