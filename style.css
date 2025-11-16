@@ -1,6 +1,7 @@
 :root {
   --bg: #000000;
   --wine: #88001b;
+  --wineDark: #3b000b;
   --grey: #cccccc;
   --greyText: #b3b3b3;
 }
@@ -71,10 +72,18 @@ body {
   justify-content: center;
 }
 
-.container {
-  text-align: center;
-  margin-top: 150px;
+.hero-inner {
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 4vw;
+  margin-top: 60px;
+}
+
+.hero-text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* "WELCOME TO MY" – Kalam */
@@ -83,25 +92,46 @@ body {
   font-family: "Kalam", cursive;
   font-size: 40px;
   color: var(--grey);
-  margin-bottom: -40px;
+  margin-bottom: -30px;
 }
 
-/* PORTFOLIO main text */
+/* PORTFOLIO main text with glow + halo */
 
 .title {
   font-family: "Limelight", sans-serif;
-  font-size: 280px;
+  font-size: clamp(140px, 18vw, 260px);
   color: var(--wine);
-  letter-spacing: -25px;
+  letter-spacing: -0.02em;
   position: relative;
   z-index: 1;
+  line-height: 0.85;
+  text-transform: uppercase;
+  white-space: nowrap;
+
   text-shadow:
     0 0 10px rgba(136, 0, 27, 0.9),
     0 0 25px rgba(136, 0, 27, 0.7),
     0 0 45px rgba(136, 0, 27, 0.5);
 }
 
-/* Per-letter animation */
+/* halo behind PORTFOLIO */
+.title::before {
+  content: "";
+  position: absolute;
+  inset: 15% 12%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(136, 0, 27, 0.6),
+    rgba(0, 0, 0, 0.3),
+    transparent 65%
+  );
+  filter: blur(22px);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* per-letter animation */
 
 .title span {
   display: inline-block;
@@ -110,36 +140,63 @@ body {
 }
 
 .title span:nth-child(1) { animation-delay: 0.1s; }
-.title span:nth-child(2) { animation-delay: 0.2s; }
-.title span:nth-child(3) { animation-delay: 0.3s; }
-.title span:nth-child(4) { animation-delay: 0.4s; }
-.title span:nth-child(5) { animation-delay: 0.5s; }
-.title span:nth-child(6) { animation-delay: 0.6s; }
-.title span:nth-child(7) { animation-delay: 0.7s; }
-.title span:nth-child(8) { animation-delay: 0.8s; }
-.title span:nth-child(9) { animation-delay: 0.9s; }
+.title span:nth-child(2) { animation-delay: 0.18s; }
+.title span:nth-child(3) { animation-delay: 0.26s; }
+.title span:nth-child(4) { animation-delay: 0.34s; }
+.title span:nth-child(5) { animation-delay: 0.42s; }
+.title span:nth-child(6) { animation-delay: 0.5s; }
+.title span:nth-child(7) { animation-delay: 0.58s; }
+.title span:nth-child(8) { animation-delay: 0.66s; }
+.title span:nth-child(9) { animation-delay: 0.74s; }
 
 @keyframes pop {
   0% {
-    transform: translateY(40px);
+    transform: translateY(40px) scale(0.95);
     opacity: 0;
   }
+  60% {
+    transform: translateY(-4px) scale(1.03);
+    opacity: 1;
+  }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
   }
 }
 
-/* Your image – bigger & pushed left */
+/* Cropped, overlapping image (waist up) */
+
+.photo-wrapper {
+  position: absolute;
+  top: 52%;
+  left: 52%;
+  transform: translate(-50%, -45%);
+  width: 320px;
+  height: 430px;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+  animation: imageIn 1.2s ease-out 0.4s forwards;
+  opacity: 0;
+}
 
 .me {
-  width: 400px;
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-38%); /* adjust left-right balance */
-  z-index: 2;
-  filter: brightness(1.2);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  filter: grayscale(100%) brightness(1.1);
+}
+
+@keyframes imageIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -25%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -45%) scale(1);
+  }
 }
 
 /* ---------- PAGE 2: ABOUT ME ---------- */
@@ -173,15 +230,35 @@ body {
   transform: translateX(0);
 }
 
-/* ABOUT ME title – same style as PORTFOLIO but smaller */
+/* ABOUT ME title – glow + halo */
 
 .about-title {
   font-family: "Limelight", sans-serif;
   font-size: 72px;
   letter-spacing: 10px;
   color: var(--wine);
-  text-shadow: 0 0 20px rgba(136, 0, 27, 0.8);
   margin: 0 0 30px 0;
+  position: relative;
+  text-shadow:
+    0 0 10px rgba(136, 0, 27, 0.9),
+    0 0 25px rgba(136, 0, 27, 0.7),
+    0 0 45px rgba(136, 0, 27, 0.5);
+}
+
+.about-title::before {
+  content: "";
+  position: absolute;
+  inset: 15% 18%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(136, 0, 27, 0.55),
+    rgba(0, 0, 0, 0.3),
+    transparent 70%
+  );
+  filter: blur(18px);
+  z-index: -1;
+  opacity: 0.8;
 }
 
 /* ABOUT text – Kalam, grey */
@@ -195,51 +272,53 @@ body {
   margin: 0 0 14px 0;
 }
 
-/* RIGHT SIDE VISUAL */
+/* RIGHT SIDE VISUAL – BIGGER NOW */
 
 .about-visual {
   flex: 1;
   position: relative;
-  min-height: 320px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
 }
 
-/* Wine red glow behind the visuals */
+/* bigger wine red glow behind visuals */
 
 .data-glow {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(136, 0, 27, 0.45) 0%, transparent 60%);
   filter: blur(6px);
   z-index: 0;
 }
 
-/* Animated bar chart */
+/* bigger bar chart */
 
 .chart {
   position: relative;
   display: flex;
-  gap: 18px;
+  gap: 22px;
   align-items: flex-end;
   z-index: 1;
+  transform: translateX(-30px);
 }
 
 .bar {
-  width: 26px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.15), #ffffff);
-  border-radius: 8px 8px 0 0;
+  width: 32px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.1), #ffffff);
+  border-radius: 12px 12px 0 0;
   animation: barPulse 1.8s ease-in-out infinite;
 }
 
-.bar1 { height: 120px; animation-delay: 0s; }
-.bar2 { height: 190px; animation-delay: 0.2s; }
-.bar3 { height: 150px; animation-delay: 0.4s; }
-.bar4 { height: 210px; animation-delay: 0.6s; }
+.bar1 { height: 160px; animation-delay: 0s; }
+.bar2 { height: 230px; animation-delay: 0.2s; }
+.bar3 { height: 190px; animation-delay: 0.4s; }
+.bar4 { height: 260px; animation-delay: 0.6s; }
+.bar5 { height: 210px; animation-delay: 0.8s; }
 
 @keyframes barPulse {
   0%,
@@ -253,29 +332,32 @@ body {
   }
 }
 
-/* Network nodes */
+/* network nodes – larger canvas */
 
 .nodes {
   position: absolute;
-  width: 320px;
-  height: 220px;
+  width: 420px;
+  height: 280px;
   z-index: 2;
 }
 
+/* nodes */
+
 .node {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
   animation: nodePulse 2.4s ease-in-out infinite;
 }
 
-.node1 { top: 15%; left: 15%; animation-delay: 0s; }
-.node2 { top: 65%; left: 25%; animation-delay: 0.3s; }
-.node3 { top: 30%; right: 12%; animation-delay: 0.6s; }
-.node4 { bottom: 10%; right: 32%; animation-delay: 0.9s; }
+.node1 { top: 15%; left: 10%; animation-delay: 0s; }
+.node2 { top: 65%; left: 22%; animation-delay: 0.3s; }
+.node3 { top: 28%; right: 15%; animation-delay: 0.6s; }
+.node4 { bottom: 10%; right: 28%; animation-delay: 0.9s; }
+.node5 { top: 50%; left: 55%; animation-delay: 1.2s; }
 
 @keyframes nodePulse {
   0%,
@@ -284,12 +366,12 @@ body {
     opacity: 0.7;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.25);
     opacity: 1;
   }
 }
 
-/* Connections between nodes */
+/* connections between nodes */
 
 .connection {
   position: absolute;
@@ -300,33 +382,218 @@ body {
     #ffffff,
     rgba(255, 255, 255, 0.1)
   );
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .c1 {
   top: 24%;
-  left: 18%;
-  width: 55%;
+  left: 12%;
+  width: 60%;
   transform: rotate(8deg);
 }
-
 .c2 {
-  top: 54%;
-  left: 20%;
+  top: 56%;
+  left: 18%;
   width: 50%;
-  transform: rotate(-18deg);
+  transform: rotate(-16deg);
 }
-
 .c3 {
   top: 70%;
-  left: 35%;
-  width: 35%;
-  transform: rotate(10deg);
+  left: 32%;
+  width: 38%;
+  transform: rotate(12deg);
+}
+.c4 {
+  top: 38%;
+  left: 50%;
+  width: 26%;
+  transform: rotate(-10deg);
+}
+
+/* ---------- PAGE 3: MY IS JOURNEY ---------- */
+
+.journey {
+  min-height: 100vh;
+  padding: 100px 80px 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-inner {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* subtitle – Kalam */
+
+.journey-subtitle {
+  font-family: "Kalam", cursive;
+  font-size: 26px;
+  color: var(--grey);
+  margin: 0 0 10px 4px;
+}
+
+/* MY IS JOURNEY – glow + halo */
+
+.journey-title {
+  font-family: "Limelight", sans-serif;
+  font-size: 64px;
+  letter-spacing: 10px;
+  color: var(--wine);
+  margin: 0 0 40px 0;
+  position: relative;
+  text-shadow:
+    0 0 10px rgba(136, 0, 27, 0.9),
+    0 0 25px rgba(136, 0, 27, 0.7),
+    0 0 45px rgba(136, 0, 27, 0.5);
+}
+
+.journey-title::before {
+  content: "";
+  position: absolute;
+  inset: 18% 20%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(136, 0, 27, 0.55),
+    rgba(0, 0, 0, 0.3),
+    transparent 70%
+  );
+  filter: blur(18px);
+  z-index: -1;
+  opacity: 0.85;
+}
+
+/* Timeline layout */
+
+.timeline {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(136, 0, 27, 0.1),
+    rgba(136, 0, 27, 0.9),
+    rgba(136, 0, 27, 0.1)
+  );
+  box-shadow: 0 0 18px rgba(136, 0, 27, 0.7);
+  transform: translateX(-50%);
+}
+
+/* each item */
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* card (wine box) */
+
+.timeline-card {
+  background: #1a0006;
+  border-radius: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(136, 0, 27, 0.3);
+  position: relative;
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.12),
+    transparent 60%
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* logo – this caps the size for you */
+
+.timeline-logo {
+  margin-bottom: 8px;
+}
+
+.timeline-logo img {
+  height: 52px;        /* logos auto-resized here */
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0%) brightness(1.1);
+}
+
+/* headings and text in Kalam */
+
+.timeline-card h3 {
+  font-family: "Kalam", cursive;
+  font-size: 22px;
+  color: #f5f5f5;
+  margin: 4px 0 2px 0;
+}
+
+.timeline-card h4 {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  color: var(--grey);
+  margin: 0 0 4px 0;
+}
+
+.timeline-card .meta {
+  font-family: "Kalam", cursive;
+  font-size: 16px;
+  color: var(--greyText);
+  margin: 0 0 8px 0;
+}
+
+.timeline-card p {
+  font-family: "Kalam", cursive;
+  font-size: 16px;
+  color: var(--greyText);
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+/* Right side: dates / extra info */
+
+.timeline-side {
+  text-align: left;
+}
+
+.timeline-date {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  color: var(--grey);
 }
 
 /* ---------- RESPONSIVE ---------- */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .about {
     padding: 100px 40px;
   }
@@ -336,6 +603,28 @@ body {
     gap: 40px;
   }
   .about-text {
+    text-align: left;
+  }
+
+  .journey {
+    padding: 100px 40px 110px;
+  }
+
+  .timeline {
+    margin-left: 0;
+  }
+
+  .timeline::before {
+    left: 4px;
+    transform: none;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-left: 30px;
+  }
+
+  .timeline-side {
     text-align: left;
   }
 }
@@ -348,6 +637,10 @@ body {
     text-align: right;
   }
 
+  .hero-inner {
+    margin-top: 100px;
+  }
+
   .welcome {
     font-size: 28px;
     margin-bottom: -20px;
@@ -355,12 +648,14 @@ body {
 
   .title {
     font-size: 160px;
-    letter-spacing: -12px;
+    letter-spacing: -0.01em;
   }
 
-  .me {
-    width: 280px;
-    transform: translateX(-50%);
+  .photo-wrapper {
+    top: 60%;
+    left: 50%;
+    width: 260px;
+    height: 340px;
   }
 
   .about {
@@ -374,5 +669,22 @@ body {
 
   .about-text p {
     font-size: 18px;
+  }
+
+  .about-visual {
+    min-height: 360px;
+  }
+
+  .journey {
+    padding: 100px 24px 100px;
+  }
+
+  .journey-title {
+    font-size: 42px;
+    letter-spacing: 6px;
+  }
+
+  .timeline-card {
+    padding: 18px 18px;
   }
 }
