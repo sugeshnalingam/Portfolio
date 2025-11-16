@@ -7,15 +7,16 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Poppins:wght@300;400;600&family=Kalam:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Kalam:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- ============== PAGE 1 – HERO ================= -->
-    <section class="hero" id="top">
+    <!-- ========== PAGE 1 – HERO ========== -->
+    <div class="hero" id="hero">
       <header class="top-bar">
         <span class="logo">
           SUGESHNA SANTHALINGAM SUBBULAKSHMI
@@ -32,186 +33,167 @@
           <img src="me.png" alt="Sugeshna in blazer" class="hero-photo" />
         </div>
       </main>
-    </section>
 
-    <!-- ============== PAGE 2 – ABOUT ME ============== -->
-    <section class="about-section" id="about">
-      <div class="about-inner fade-on-scroll">
+      <div class="scroll-hint">scroll</div>
+    </div>
+
+    <!-- ========== PAGE 2 – ABOUT ME ========== -->
+    <section id="about" class="section about-section">
+      <div class="section-inner about-layout">
         <div class="about-text">
           <h2 class="about-title">ABOUT ME</h2>
 
-          <div class="about-copy">
-            <p>
-              Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s pace.
-            </p>
-            <p>
-              I blend data, creativity, and people skills – with real sales
-              experience and a mind that loves patterns.
-            </p>
-            <p>
-              I bring both logic + hustle wherever I go.
-            </p>
-            <p>
-              Not perfect, not finished – but fully committed to building
-              something bigger.
-            </p>
-          </div>
+          <p>
+            Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s
+            pace.
+          </p>
+          <p>
+            I blend data, creativity, and people skills – with real sales
+            experience and a mind that loves patterns.
+          </p>
+          <p>
+            I bring both logic + hustle wherever I go.
+          </p>
+          <p>
+            Not perfect, not finished – but fully committed to building
+            something bigger.
+          </p>
         </div>
 
-        <div class="about-visual">
-          <div class="data-chart">
-            <div class="chart-glow"></div>
-            <div class="bars">
-              <span class="bar bar-1"></span>
-              <span class="bar bar-2"></span>
-              <span class="bar bar-3"></span>
-              <span class="bar bar-4"></span>
+        <div class="about-graphic">
+          <div class="analytics-graphic">
+            <div class="analytics-bars">
+              <div class="analytics-bar"></div>
+              <div class="analytics-bar"></div>
+              <div class="analytics-bar"></div>
+              <div class="analytics-bar"></div>
             </div>
-            <svg class="chart-line" viewBox="0 0 200 100" preserveAspectRatio="none">
-              <polyline
-                points="0,80 50,60 100,70 150,40 200,45"
-                fill="none"
-                stroke="rgba(255,255,255,0.8)"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div class="chart-dots">
-              <span class="dot dot-1"></span>
-              <span class="dot dot-2"></span>
-              <span class="dot dot-3"></span>
-              <span class="dot dot-4"></span>
-              <span class="dot dot-5"></span>
+            <div class="analytics-line"></div>
+            <div class="analytics-dots">
+              <span></span><span></span><span></span><span></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============== PAGE 3 – IS JOURNEY ============ -->
-    <section class="journey-section" id="journey">
-      <div class="journey-header fade-on-scroll">
-        <p class="journey-tagline">what I have done so far</p>
+    <!-- ========== PAGE 3 – JOURNEY ========== -->
+    <section id="journey" class="section journey-section">
+      <div class="section-inner">
         <h2 class="journey-title">
-          <span class="journey-soft">MY&nbsp;</span>
-          <span class="journey-strong">INFORMATION SYSTEMS</span>
-          <span class="journey-soft">&nbsp;JOURNEY</span>
+          <span class="journey-small">MY</span>
+          <span class="journey-main">INFORMATION SYSTEMS</span>
+          <span class="journey-small">JOURNEY</span>
         </h2>
-      </div>
 
-      <div class="timeline">
-        <!-- BBA -->
-        <div class="timeline-entry left fade-on-scroll">
-          <div class="timeline-card">
-            <h3 class="timeline-heading">
-              Bachelors of Business Administration<br />
-              <span class="sub">(Information Systems)</span>
-            </h3>
-            <p class="timeline-sub">PSG College of Arts and Science</p>
-            <p class="timeline-body">
-              Built a strong base in business, IT, and analytics – understanding how
-              systems, data, and people come together to drive decisions.
-            </p>
-            <p class="timeline-meta">CGPA: <strong>8.8 / 10</strong></p>
+        <div class="timeline">
+          <!-- BBA -->
+          <div class="timeline-item left">
+            <div class="timeline-card">
+              <div class="timeline-icon">
+                <img src="psg-logo.png" alt="PSG College of Arts and Science logo" />
+              </div>
+
+              <h3>Bachelors of Business Administration (Information Systems)</h3>
+              <h4>PSG College of Arts and Science</h4>
+              <ul>
+                <li>
+                  Built a strong base in business, IT, and analytics – understanding
+                  how systems, data, and people come together to drive decisions.
+                </li>
+                <li>CGPA: <strong>8.8 / 10</strong></li>
+              </ul>
+            </div>
+
+            <div class="timeline-date right-pill">
+              SEPT 2020 – JULY 2023
+            </div>
           </div>
 
-          <div class="timeline-logo-circle">
-            <img src="psg-logo.png" alt="PSG Logo" />
+          <!-- MBA -->
+          <div class="timeline-item right">
+            <div class="timeline-card">
+              <div class="timeline-icon">
+                <img src="utoledo-logo.png" alt="University of Toledo logo" />
+              </div>
+
+              <h3>Masters of Business Administration (Information Systems)</h3>
+              <h4>The University of Toledo</h4>
+              <ul>
+                <li>
+                  Leveled up into advanced analytics, strategy, and real-world
+                  projects connecting data to business outcomes.
+                </li>
+                <li>GPA: <strong>3.4 / 4.0</strong></li>
+              </ul>
+            </div>
+
+            <div class="timeline-date left-pill">
+              AUG 2023 – MAY 2025
+            </div>
           </div>
 
-          <div class="timeline-date-pill">
-            SEPT 2020 – JULY 2023
-          </div>
-        </div>
+          <!-- Tri Bee -->
+          <div class="timeline-item left">
+            <div class="timeline-card">
+              <div class="timeline-icon">
+                <img src="tribee-logo.png" alt="Tri Bee logo" />
+              </div>
 
-        <!-- MBA -->
-        <div class="timeline-entry right fade-on-scroll">
-          <div class="timeline-card">
-            <h3 class="timeline-heading">
-              Masters of Business Administration<br />
-              <span class="sub">(Information Systems)</span>
-            </h3>
-            <p class="timeline-sub">The University of Toledo</p>
-            <p class="timeline-body">
-              Leveled up into advanced analytics, strategy, and real-world projects
-              connecting data to business outcomes.
-            </p>
-            <p class="timeline-meta">GPA: <strong>3.4 / 4.0</strong></p>
-          </div>
+              <h3>Tri Bee — Data Analytics Intern</h3>
+              <h4>Remote</h4>
+              <ul>
+                <li>
+                  Analyzed and prepared IT performance data using SQL and Python to
+                  uncover key operational trends.
+                </li>
+                <li>
+                  Designed interactive Power BI dashboards to present insights and
+                  guide strategic decision-making.
+                </li>
+              </ul>
+            </div>
 
-          <div class="timeline-logo-circle">
-            <img src="utoledo-logo.png" alt="University of Toledo Logo" />
-          </div>
-
-          <div class="timeline-date-pill">
-            AUG 2023 – MAY 2025
-          </div>
-        </div>
-
-        <!-- Tri Bee -->
-        <div class="timeline-entry left fade-on-scroll">
-          <div class="timeline-card">
-            <h3 class="timeline-heading">
-              Tri Bee — <span class="sub">Data Analytics Intern</span>
-            </h3>
-            <p class="timeline-sub">Remote</p>
-            <p class="timeline-body">
-              Analyzed and prepared IT performance data using SQL and Python to
-              uncover key operational trends.
-            </p>
-            <p class="timeline-body">
-              Designed interactive Power BI dashboards to present insights and guide
-              strategic decision-making.
-            </p>
-          </div>
-
-          <div class="timeline-logo-circle">
-            <img src="tribee-logo.png" alt="Tri Bee Logo" />
-          </div>
-
-          <div class="timeline-date-pill">
-            JAN 2024 – JUNE 2024
+            <div class="timeline-date right-pill">
+              JAN 2024 – JUNE 2024
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============== PAGE 4 – LET'S WORK TOGETHER === -->
-    <section class="contact-section" id="contact">
-      <div class="contact-inner fade-on-scroll">
-        <div class="contact-heading">
-          <div class="contact-top-line">
-            <span class="contact-main">LET'S</span>
+    <!-- ========== PAGE 4 – CONTACT ========== -->
+    <section id="contact" class="section contact-section">
+      <div class="section-inner contact-layout">
+        <div class="contact-hero-text">
+          <div class="contact-line-top">
+            <span class="contact-big red-glow">LET’S</span>
             <span class="contact-script">Work</span>
           </div>
-          <div class="contact-bottom-line">
-            <span class="contact-main">TOGETHER</span>
+          <div class="contact-line-bottom">
+            <span class="contact-big red-glow">TOGETHER</span>
           </div>
         </div>
 
         <div class="contact-details">
-          <div class="contact-row">
-            <span class="contact-icon email-icon">✉️</span>
-            <a href="mailto:sugeshnalingam@gmail.com" class="contact-link">
+          <div class="contact-item">
+            <span class="contact-icon email-icon">✉</span>
+            <a href="mailto:sugeshnalingam@gmail.com">
               sugeshnalingam@gmail.com
             </a>
           </div>
 
-          <div class="contact-row">
-            <span class="contact-icon phone-icon">📞</span>
-            <a href="tel:+14193925270" class="contact-link">
-              (419) 392-5270
-            </a>
+          <div class="contact-item">
+            <span class="contact-icon phone-icon">☎</span>
+            <a href="tel:+14193925270">(419) 392-5270</a>
           </div>
 
-          <div class="contact-row">
+          <div class="contact-item">
             <span class="contact-icon linkedin-icon">in</span>
             <a
               href="https://www.linkedin.com/in/sugeshna-santhalingam"
-              class="contact-link"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               www.linkedin.com/in/sugeshna-santhalingam
             </a>
