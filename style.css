@@ -1,247 +1,307 @@
 /* ================================
-   GLOBAL SETTINGS
+   FONTS & GLOBAL
 ================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Raleway:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
-    font-family: 'Kalam', cursive;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+:root {
+  --bg: #000000;
+  --wine: #8A001C;
+  --grey: #c4c4c4;
+  --card-bg: rgba(40, 0, 20, 0.85);
 }
 
-/* ================================
-   SECTION BASE
-================================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: #fff;
+  font-family: 'Kalam', cursive;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* ================================
-   PAGE 1 — HERO
+   PAGE 1: HERO
 ================================= */
 
 .hero {
-    text-align: center;
-    position: relative;
-    padding-top: 120px;
+  position: relative;
+  text-align: center;
+  padding-top: 110px;
+  background: radial-gradient(circle at top, #111 0, #000 55%);
+  overflow: hidden;
 }
 
-.hero h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 160px;
-    color: #8A001C;
-    letter-spacing: 22px;
-    text-shadow: 0 0 40px rgba(255,0,70,0.5),
-                 0 0 70px rgba(255,0,70,0.4);
+.name-tag {
+  position: absolute;
+  top: 22px;
+  right: 40px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
 }
 
 .hero-subtitle {
-    font-family: 'Raleway', sans-serif;
-    font-size: 26px;
-    color: #c4c4c4;
-    margin-bottom: -40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  color: var(--grey);
+  margin-bottom: -35px;
 }
 
-/* Your name top-right */
-.name-tag {
-    position: absolute;
-    top: 25px;
-    right: 40px;
-    font-size: 20px;
-    color: white;
-    font-family: 'Raleway', sans-serif;
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 160px;
+  letter-spacing: 24px;
+  color: var(--wine);
+  text-shadow:
+    0 0 30px rgba(255,0,70,0.55),
+    0 0 60px rgba(255,0,70,0.45);
+  margin: 0;
 }
 
-/* IMAGE FIX — FINAL VERSION */
+/* Your image locked to page 1 only */
+.hero-image {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;          /* <- controls how low you stand */
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
 .hero-image img {
-    width: 380px;
-    position: absolute;
-    top: 52%;                 /* <-- FIXED */
-    left: 50%;
-    transform: translate(-50%, -40%);
-    z-index: 30;
-    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.7));
+  width: 370px;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.9));
 }
 
-/* Scroll indicator */
 .scroll-down {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Raleway';
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: #c4c4c4;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--grey);
 }
 
 /* ================================
-   PAGE 2 — ABOUT ME
+   PAGE 2: ABOUT ME
 ================================= */
 
+.about {
+  padding: 80px 90px 80px 90px;
+}
+
 .about-title {
-    font-family: 'Cinzel Decorative';
-    font-size: 90px;
-    color: #8A001C;
-    text-align: left;
-    margin-left: 90px;
-    margin-top: 100px;
-    text-shadow: 0 0 30px rgba(255,0,70,0.45),
-                 0 0 60px rgba(255,0,70,0.35);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 90px;
+  color: var(--wine);
+  text-shadow:
+    0 0 25px rgba(255,0,70,0.5),
+    0 0 55px rgba(255,0,70,0.4);
+  margin: 0 0 40px 0;
 }
 
 .about-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 120px;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: center;
 }
 
 .about-text {
-    width: 48%;
-    font-size: 24px;
-    line-height: 1.8;
-    color: #c4c4c4;
+  width: 55%;
+  font-size: 24px;
+  line-height: 1.8;
+  color: var(--grey);
 }
 
 .about-animation {
-    width: 48%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-animation img {
-    width: 70%;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 25px rgba(255,0,60,0.3));
+  width: 80%;
+  max-width: 420px;
+  filter: drop-shadow(0 0 28px rgba(255,0,60,0.45));
+  opacity: 0.95;
 }
 
 /* ================================
-   PAGE 3 — INFORMATION SYSTEMS JOURNEY
+   PAGE 3: JOURNEY
 ================================= */
 
+.journey {
+  padding: 60px 0 120px 0;
+}
+
 .journey-title {
-    font-family: 'Cinzel Decorative';
-    font-size: 85px;
-    color: #8A001C;
-    text-align: center;
-    margin-top: 60px;
-    text-shadow: 0 0 35px rgba(255,0,60,0.45);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 85px;
+  color: var(--wine);
+  text-shadow:
+    0 0 30px rgba(255,0,70,0.55),
+    0 0 60px rgba(255,0,70,0.45);
+  text-align: center;
+  margin: 0;
 }
 
 .timeline {
-    position: relative;
-    width: 90%;
-    margin: auto;
-    margin-top: 80px;
+  position: relative;
+  width: 90%;
+  margin: 80px auto 0 auto;
 }
 
 .timeline-line {
-    width: 4px;
-    height: 100%;
-    background: #8A001C;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--wine), #300009);
+  box-shadow: 0 0 25px rgba(255,0,70,0.4);
 }
 
-/* Each entry container */
+/* Single card */
 .timeline-entry {
-    width: 50%;
-    padding: 40px;
-    background: rgba(40,0,20,0.75);
-    border-radius: 20px;
-    margin: 100px 0;
-    box-shadow: 0 0 25px rgba(255,0,60,0.25);
-    position: relative;
+  position: relative;
+  width: 46%;
+  padding: 40px 36px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 0 30px rgba(255,0,70,0.35);
+  margin: 90px 0;
 }
 
-/* Left entries */
-.left {
-    margin-left: 0;
+/* Left side card */
+.timeline-entry.left {
+  margin-right: auto;
 }
 
-/* Right entries */
-.right {
-    margin-left: 50%;
+/* Right side card */
+.timeline-entry.right {
+  margin-left: auto;
 }
 
-/* Company / Uni icons — FIXED to CENTER LINE */
+/* Icon — sits on center line */
 .timeline-icon {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -40px;
-    z-index: 5;
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 
 .timeline-icon img {
-    width: 80px;
-    height: 80px;
-    background: white;
-    border-radius: 50%;
-    padding: 8px;
-    object-fit: contain;
-    box-shadow: 0 0 18px rgba(255,0,60,0.4);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 10px;
+  object-fit: contain;
+  box-shadow:
+    0 0 18px rgba(255,0,70,0.7),
+    0 0 35px rgba(255,0,70,0.45);
 }
 
-/* Date bubble */
+/* Date pill */
 .timeline-date {
-    position: absolute;
-    top: 40px;
-    right: -200px;
-    background: #8A001C;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 20px;
-    color: white;
-    letter-spacing: 3px;
-    font-family: 'Kalam';
+  position: absolute;
+  top: 40px;
+  background: var(--wine);
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 50px;
+  font-size: 19px;
+  letter-spacing: 3px;
 }
 
-/* Date bubble for left items */
-.left .timeline-date {
-    left: -220px;
+/* Date left vs right positioning */
+.timeline-entry.left .timeline-date {
+  right: -260px;
 }
 
+.timeline-entry.right .timeline-date {
+  left: -260px;
+}
+
+/* Text inside cards */
 .entry-header {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-family: 'Kalam';
+  font-size: 30px;
+  margin: 20px 0 10px 0;
 }
 
 .entry-sub {
-    font-size: 20px;
-    color: #ccc;
-    margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--grey);
+  margin-bottom: 18px;
 }
 
 .entry-text {
-    font-size: 18px;
-    color: #ddd;
-    line-height: 1.7;
+  font-size: 18px;
+  color: #e3e3e3;
+  line-height: 1.7;
 }
 
-/* Smooth fade (optional) */
+/* ================================
+   FADE-IN ANIMATION (OPTIONAL)
+================================= */
+
 .fade-in {
-    opacity: 0;
-    transform: translateY(15px);
-    transition: 1s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Responsive-ish tweak */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 90px;
+    letter-spacing: 10px;
+  }
+  .hero-image img {
+    width: 260px;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+  .about-text, .about-animation {
+    width: 100%;
+  }
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .timeline-date {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    margin-bottom: 10px;
+  }
+}
