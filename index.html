@@ -2,36 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Portfolio | Sugeshna</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Limelight&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Kalam + Limelight -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Limelight&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- TOP NAME WITH UNDERLINE ANIMATION -->
+  <!-- FIXED NAME WITH UNDERLINE ANIMATION -->
   <header class="top-name">
     SUGESHNA SANTHALINGAM SUBBULAKSHMI
   </header>
 
-  <!-- PAGE 1 : HERO / PORTFOLIO -->
+  <!-- PAGE 1: HERO / PORTFOLIO -->
   <section class="hero">
-    <div class="container">
-      <h2 class="welcome">WELCOME TO MY</h2>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h2 class="welcome">WELCOME TO MY</h2>
 
-      <h1 class="title">
-        <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
-      </h1>
+        <h1 class="title">
+          <span>P</span>
+          <span>O</span>
+          <span>R</span>
+          <span>T</span>
+          <span>F</span>
+          <span>O</span>
+          <span>L</span>
+          <span>I</span>
+          <span>O</span>
+        </h1>
+      </div>
 
-      <img src="me.png" class="me" alt="Sugeshna">
+      <!-- Cropped, overlapping image -->
+      <div class="photo-wrapper">
+        <img src="me.png" alt="Sugeshna" class="me" />
+      </div>
     </div>
   </section>
 
-  <!-- PAGE 2 : ABOUT ME -->
+  <!-- PAGE 2: ABOUT ME -->
   <section class="about" id="about">
     <div class="about-inner">
       <!-- LEFT SIDE TEXT -->
@@ -44,7 +60,7 @@
         <p>Not perfect, not finished – but fully committed to building something bigger.</p>
       </div>
 
-      <!-- RIGHT SIDE ANIMATION -->
+      <!-- RIGHT SIDE ANIMATION (BIGGER) -->
       <div class="about-visual">
         <div class="data-glow"></div>
 
@@ -53,6 +69,7 @@
           <div class="bar bar2"></div>
           <div class="bar bar3"></div>
           <div class="bar bar4"></div>
+          <div class="bar bar5"></div>
         </div>
 
         <div class="nodes">
@@ -60,9 +77,88 @@
           <div class="node node2"></div>
           <div class="node node3"></div>
           <div class="node node4"></div>
+          <div class="node node5"></div>
+
           <div class="connection c1"></div>
           <div class="connection c2"></div>
           <div class="connection c3"></div>
+          <div class="connection c4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: MY IS JOURNEY -->
+  <section class="journey" id="journey">
+    <div class="journey-inner">
+      <p class="journey-subtitle">what I have done so far</p>
+      <h2 class="journey-title">MY IS JOURNEY</h2>
+
+      <div class="timeline">
+        <!-- BBA -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-logo">
+              <img src="psg-logo.png" alt="PSG College logo" />
+            </div>
+            <h3>Bachelors of Business Administration (Information Systems)</h3>
+            <h4>PSG College of Arts and Science</h4>
+            <p class="meta">CGPA: 8.8 / 10</p>
+            <p>
+              Built a strong foundation in business strategy, operations, and information systems with a focus on how data supports decision-making.
+            </p>
+            <p>
+              Worked on group projects that combined analytics, presentations, and stakeholder communication – my first taste of mixing data with storytelling.
+            </p>
+          </div>
+
+          <div class="timeline-side">
+            <p class="timeline-date">Sept 2020 – July 2023</p>
+          </div>
+        </div>
+
+        <!-- MBA -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-logo">
+              <img src="utoledo-logo.png" alt="University of Toledo logo" />
+            </div>
+            <h3>Masters of Business Administration (Information Systems)</h3>
+            <h4>The University of Toledo</h4>
+            <p class="meta">GPA: 3.4 / 4.0</p>
+            <p>
+              Deepened my skills in data analytics, systems, and technology-driven business strategy while adapting to the US education and work culture.
+            </p>
+            <p>
+              Balanced coursework, projects, and part-time roles – learning how to deliver under pressure and communicate with diverse teams.
+            </p>
+          </div>
+
+          <div class="timeline-side">
+            <p class="timeline-date">Aug 2023 – May 2025</p>
+          </div>
+        </div>
+
+        <!-- Tri Bee -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-logo">
+              <img src="tribee-logo.png" alt="Tri Bee logo" />
+            </div>
+            <h3>Data Analytics Intern</h3>
+            <h4>Tri Bee (Remote)</h4>
+            <p class="meta">Jan 2024 – June 2024</p>
+            <p>
+              Analyzed and prepared IT performance data using SQL and Python to uncover key operational trends.
+            </p>
+            <p>
+              Designed interactive Power BI dashboards to present insights and guide strategic decision-making for internal stakeholders.
+            </p>
+          </div>
+
+          <div class="timeline-side">
+            <p class="timeline-date">Remote Internship</p>
+          </div>
         </div>
       </div>
     </div>
