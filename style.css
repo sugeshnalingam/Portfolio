@@ -73,23 +73,24 @@ body {
 .hero-center {
   position: relative;
   text-align: center;
-  transform: translateY(-4vh);
+  /* remove crazy vertical shift */
+  transform: translateY(-2vh);
 }
 
 .hero-subtitle {
   font-family: "Kalam", cursive;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--grey-soft);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
-/* big PORTFOLIO with halo */
+/* big PORTFOLIO with halo, but not so massive it gets cut off */
 .hero-title {
   font-family: "Cinzel Decorative", serif;
-  font-size: clamp(4.8rem, 13vw, 11.5rem);
-  letter-spacing: 0.14em;
+  font-size: clamp(3.6rem, 8.5vw, 7.2rem);
+  letter-spacing: 0.11em;
   color: var(--wine);
   text-transform: uppercase;
   text-shadow:
@@ -98,6 +99,7 @@ body {
     0 0 60px rgba(0, 0, 0, 0.9);
   animation: titleGlow 4.5s ease-in-out infinite alternate;
   white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
 .hero-letter {
@@ -117,10 +119,10 @@ body {
 .hero-letter:nth-child(8) { animation-delay: 0.40s; }
 .hero-letter:nth-child(9) { animation-delay: 0.45s; }
 
-/* your image overlapping between T and F */
+/* your image overlapping roughly between T and F */
 .hero-image-wrapper {
   position: absolute;
-  bottom: -6vh;
+  bottom: -4vh;
   left: 52%;
   transform: translateX(-32%);
   z-index: 5;
@@ -513,7 +515,7 @@ body {
   }
 
   .hero-image-wrapper {
-    bottom: -8vh;
+    bottom: -6vh;
     left: 50%;
     transform: translateX(-50%);
   }
