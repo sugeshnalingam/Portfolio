@@ -1,4 +1,4 @@
-// Intersection Observer to trigger slide-in animations
+// Simple Intersection Observer for slide-in animations
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
