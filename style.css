@@ -73,7 +73,6 @@ body {
 .hero-center {
   position: relative;
   text-align: center;
-  /* remove crazy vertical shift */
   transform: translateY(-2vh);
 }
 
@@ -86,11 +85,11 @@ body {
   margin-bottom: 1.25rem;
 }
 
-/* big PORTFOLIO with halo, but not so massive it gets cut off */
+/* BIG PORTFOLIO – glowing serif like before */
 .hero-title {
-  font-family: "Cinzel Decorative", serif;
-  font-size: clamp(3.6rem, 8.5vw, 7.2rem);
-  letter-spacing: 0.11em;
+  font-family: "Cinzel Decorative", serif;   /* same classy serif for PORTFOLIO */
+  font-size: clamp(4.2rem, 9.2vw, 7.8rem);  /* bigger again, but not broken */
+  letter-spacing: 0.13em;
   color: var(--wine);
   text-transform: uppercase;
   text-shadow:
@@ -110,7 +109,7 @@ body {
 }
 
 .hero-letter:nth-child(1) { animation-delay: 0.05s; }
-.hero-letter:nth-child(2) { animation-delay: 0.10s; }
+hero-letter:nth-child(2) { animation-delay: 0.10s; }
 .hero-letter:nth-child(3) { animation-delay: 0.15s; }
 .hero-letter:nth-child(4) { animation-delay: 0.20s; }
 .hero-letter:nth-child(5) { animation-delay: 0.25s; }
@@ -119,10 +118,10 @@ body {
 .hero-letter:nth-child(8) { animation-delay: 0.40s; }
 .hero-letter:nth-child(9) { animation-delay: 0.45s; }
 
-/* your image overlapping roughly between T and F */
+/* your image – LOWERED */
 .hero-image-wrapper {
   position: absolute;
-  bottom: -4vh;
+  bottom: -11vh;          /* ⬅ lowered compared to before */
   left: 52%;
   transform: translateX(-32%);
   z-index: 5;
@@ -166,8 +165,9 @@ body {
   gap: 4rem;
 }
 
+/* heading style reused for ABOUT ME + JOURNEY title */
 .section-eyebrow {
-  font-family: "Cinzel Decorative", serif;
+  font-family: "Cinzel Decorative", serif;   /* same serif as PORTFOLIO */
   font-size: 3.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -230,19 +230,9 @@ body {
   animation: orbitRotate 8s linear infinite;
 }
 
-.orbit-1 {
-  inset: 18% 10% 38% 10%;
-}
-
-.orbit-2 {
-  inset: 30% 14% 30% 14%;
-  animation-duration: 10s;
-}
-
-.orbit-3 {
-  inset: 42% 18% 22% 18%;
-  animation-duration: 12s;
-}
+.orbit-1 { inset: 18% 10% 38% 10%; }
+.orbit-2 { inset: 30% 14% 30% 14%; animation-duration: 10s; }
+.orbit-3 { inset: 42% 18% 22% 18%; animation-duration: 12s; }
 
 /* moving dots */
 .dot {
@@ -265,11 +255,13 @@ body {
 
 .journey-section {
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
+/* CENTERED HEADER, single line title */
 .journey-header {
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
+  text-align: center;
 }
 
 .journey-eyebrow {
@@ -279,10 +271,11 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* same serif + glow as PORTFOLIO / ABOUT ME, but slightly smaller so it fits one line */
 .journey-title {
   font-family: "Cinzel Decorative", serif;
-  font-size: 3.2rem;
-  letter-spacing: 0.16em;
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
+  letter-spacing: 0.14em;
   color: var(--wine);
   text-transform: uppercase;
   text-shadow:
