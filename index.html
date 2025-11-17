@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Limelight&family=Kalam:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Limelight&family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
@@ -15,8 +15,8 @@
   </head>
 
   <body>
-    <!-- ========== PAGE 1 – HERO ========== -->
-    <div class="hero" id="hero">
+    <!-- ===== HERO / PAGE 1 ===== -->
+    <section id="hero" class="section hero visible">
       <header class="top-bar">
         <span class="logo">
           SUGESHNA SANTHALINGAM SUBBULAKSHMI
@@ -32,16 +32,16 @@
         <div class="photo-wrapper">
           <img src="me.png" alt="Sugeshna in blazer" class="hero-photo" />
         </div>
+
+        <div class="scroll-indicator">scroll</div>
       </main>
+    </section>
 
-      <div class="scroll-hint">scroll</div>
-    </div>
-
-    <!-- ========== PAGE 2 – ABOUT ME ========== -->
+    <!-- ===== ABOUT ME / PAGE 2 ===== -->
     <section id="about" class="section about-section">
-      <div class="section-inner about-layout">
+      <div class="about-inner">
         <div class="about-text">
-          <h2 class="about-title">ABOUT ME</h2>
+          <h2 class="section-title">ABOUT ME</h2>
 
           <p>
             Hi, I’m Sugeshna – obsessed with building my future at a sprinter’s
@@ -51,35 +51,36 @@
             I blend data, creativity, and people skills – with real sales
             experience and a mind that loves patterns.
           </p>
-          <p>
-            I bring both logic + hustle wherever I go.
-          </p>
+          <p>I bring both logic + hustle wherever I go.</p>
           <p>
             Not perfect, not finished – but fully committed to building
             something bigger.
           </p>
         </div>
 
-        <div class="about-graphic">
+        <div class="about-graphic-wrap">
           <div class="analytics-graphic">
             <div class="analytics-bars">
-              <div class="analytics-bar"></div>
-              <div class="analytics-bar"></div>
-              <div class="analytics-bar"></div>
-              <div class="analytics-bar"></div>
+              <div class="analytics-bar bar-1"></div>
+              <div class="analytics-bar bar-2"></div>
+              <div class="analytics-bar bar-3"></div>
+              <div class="analytics-bar bar-4"></div>
             </div>
-            <div class="analytics-line"></div>
-            <div class="analytics-dots">
-              <span></span><span></span><span></span><span></span>
+
+            <div class="analytics-line">
+              <span class="dot dot-1"></span>
+              <span class="dot dot-2"></span>
+              <span class="dot dot-3"></span>
+              <span class="dot dot-4"></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== PAGE 3 – JOURNEY ========== -->
+    <!-- ===== JOURNEY / PAGE 3 ===== -->
     <section id="journey" class="section journey-section">
-      <div class="section-inner">
+      <div class="journey-inner">
         <h2 class="journey-title">
           <span class="journey-small">MY</span>
           <span class="journey-main">INFORMATION SYSTEMS</span>
@@ -88,73 +89,72 @@
 
         <div class="timeline">
           <!-- BBA -->
-          <div class="timeline-item left">
-            <div class="timeline-card">
-              <div class="timeline-icon">
-                <img src="psg-logo.png" alt="PSG College of Arts and Science logo" />
+          <div class="timeline-card left">
+            <div class="timeline-box">
+              <div class="timeline-logo">
+                <img src="psg-logo.png" alt="PSG logo" />
               </div>
 
-              <h3>Bachelors of Business Administration (Information Systems)</h3>
-              <h4>PSG College of Arts and Science</h4>
+              <h3>Bachelors of Business Administration<br />(Information Systems)</h3>
+              <p class="timeline-sub">PSG College of Arts and Science</p>
               <ul>
                 <li>
-                  Built a strong base in business, IT, and analytics – understanding
-                  how systems, data, and people come together to drive decisions.
+                  Built a strong base in business, IT, and analytics – understanding how
+                  systems, data, and people come together to drive decisions.
                 </li>
-                <li>CGPA: <strong>8.8 / 10</strong></li>
+                <li>CGPA: 8.8 / 10</li>
               </ul>
             </div>
-
-            <div class="timeline-date right-pill">
+            <div class="timeline-date pill-right">
               SEPT 2020 – JULY 2023
             </div>
           </div>
 
           <!-- MBA -->
-          <div class="timeline-item right">
-            <div class="timeline-card">
-              <div class="timeline-icon">
+          <div class="timeline-card right">
+            <div class="timeline-box">
+              <div class="timeline-logo">
                 <img src="utoledo-logo.png" alt="University of Toledo logo" />
               </div>
 
-              <h3>Masters of Business Administration (Information Systems)</h3>
-              <h4>The University of Toledo</h4>
+              <h3>
+                Masters of Business Administration<br />(Information Systems)
+              </h3>
+              <p class="timeline-sub">The University of Toledo</p>
               <ul>
                 <li>
-                  Leveled up into advanced analytics, strategy, and real-world
-                  projects connecting data to business outcomes.
+                  Leveled up into advanced analytics, strategy, and real-world projects
+                  connecting data to business outcomes.
                 </li>
-                <li>GPA: <strong>3.4 / 4.0</strong></li>
+                <li>GPA: 3.4 / 4.0</li>
               </ul>
             </div>
-
-            <div class="timeline-date left-pill">
+            <div class="timeline-date pill-left">
               AUG 2023 – MAY 2025
             </div>
           </div>
 
           <!-- Tri Bee -->
-          <div class="timeline-item left">
-            <div class="timeline-card">
-              <div class="timeline-icon">
+          <div class="timeline-card left">
+            <div class="timeline-box">
+              <div class="timeline-logo">
                 <img src="tribee-logo.png" alt="Tri Bee logo" />
               </div>
 
               <h3>Tri Bee — Data Analytics Intern</h3>
-              <h4>Remote</h4>
+              <p class="timeline-sub">Remote</p>
               <ul>
                 <li>
-                  Analyzed and prepared IT performance data using SQL and Python to
-                  uncover key operational trends.
+                  Analyzed and prepared IT performance data using SQL and Python to uncover
+                  key operational trends.
                 </li>
                 <li>
-                  Designed interactive Power BI dashboards to present insights and
-                  guide strategic decision-making.
+                  Designed interactive Power BI dashboards to present insights and guide
+                  strategic decision-making.
                 </li>
               </ul>
             </div>
-
-            <div class="timeline-date right-pill">
+            <div class="timeline-date pill-right">
               JAN 2024 – JUNE 2024
             </div>
           </div>
@@ -162,38 +162,34 @@
       </div>
     </section>
 
-    <!-- ========== PAGE 4 – CONTACT ========== -->
+    <!-- ===== CONTACT / PAGE 4 ===== -->
     <section id="contact" class="section contact-section">
-      <div class="section-inner contact-layout">
-        <div class="contact-hero-text">
-          <div class="contact-line-top">
-            <span class="contact-big red-glow">LET’S</span>
-            <span class="contact-script">Work</span>
-          </div>
-          <div class="contact-line-bottom">
-            <span class="contact-big red-glow">TOGETHER</span>
-          </div>
+      <div class="contact-inner">
+        <div class="contact-heading">
+          <span class="lets">LET’S</span>
+          <span class="work">work</span>
+          <span class="together">TOGETHER</span>
         </div>
 
         <div class="contact-details">
-          <div class="contact-item">
+          <div class="contact-row">
             <span class="contact-icon email-icon">✉</span>
             <a href="mailto:sugeshnalingam@gmail.com">
               sugeshnalingam@gmail.com
             </a>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-row">
             <span class="contact-icon phone-icon">☎</span>
             <a href="tel:+14193925270">(419) 392-5270</a>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-row">
             <span class="contact-icon linkedin-icon">in</span>
             <a
               href="https://www.linkedin.com/in/sugeshna-santhalingam"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               www.linkedin.com/in/sugeshna-santhalingam
             </a>
